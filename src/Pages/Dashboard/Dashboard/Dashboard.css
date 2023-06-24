@@ -1,0 +1,43 @@
+.nav-pills li .dashboardmenulink:hover{
+    background-color: #ff9900;
+    color: 'white';
+}
+.nav-pills li button:hover{
+    background-color: #ff9900;
+    color: 'white';
+}
+.nav-pills li button:focus{
+    background-color: #ff9900;
+    color: 'white';
+}
+.nav-pills li .dashboardmenulink:focus{
+    background-color: #ff9900;
+    color: 'white';
+}
+/* .menu-item {
+    height: 100vh;
+} */
+
+.nav-pills li .menuitemfont{
+    font-size: 14px;
+    padding: 0px !important;
+}
+
+.upgradbottom {
+    margin-top: 30px;
+    width: 100%;
+}
+.menu-item{
+    min-height: 100vh;
+    top: 0;
+    left: 0;
+    font-size: 22px;
+    padding: 0px !important;
+}
+.menu-item a:focus{
+    background-color: #ff9900;
+    color: white;
+}
+
+
+

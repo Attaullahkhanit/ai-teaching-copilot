@@ -1,0 +1,33 @@
+
+.downloadpdfready {
+    color: '#CDC1FB';
+    cursor: pointer;
+}
+.endownload{
+    cursor: pointer !important;
+}
+
+.ck-inspector {
+    overflow: hidden;
+    border-collapse: collapse;
+    color: var(--ck-inspector-color-black);
+    text-align: left;
+    white-space: normal;
+    cursor: auto;
+    float: none;
+    background: var(--ck-inspector-color-background);
+    display: none !important;
+    border-top: 1px solid var(--ck-inspector-color-border);
+    z-index: 9999;
+}
+
+.imFilesEmptycolor{
+    cursor: pointer ;
+    float: right;
+    position: relative;
+    z-index: 99999; 
+    padding: 3px !important;
+    float: right;
+    color: #036CFF !important;
+    
+}

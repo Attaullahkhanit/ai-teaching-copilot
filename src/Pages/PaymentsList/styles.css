@@ -1,0 +1,27 @@
+.page-container {
+    margin: 20px;
+  }
+  
+  h1 {
+    margin-bottom: 10px;
+  }
+  
+  .payment-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .payment-table th,
+  .payment-table td {
+    padding: 8px;
+    border: 1px solid #ccc;
+  }
+  
+  .payment-table th {
+    background-color: #f1f1f1;
+  }
+  
+  .payment-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  

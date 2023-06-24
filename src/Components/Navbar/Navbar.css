@@ -1,0 +1,16 @@
+
+
+.navbar-toggler{
+    width: 20% !important;
+    /* max-width: 40px !important; */
+}
+.navbarList:focus{
+    border-bottom: 1px solid #000;
+}
+
+@media (min-width: 576px){
+    .navbar-toggler{
+        width: 10% !important;
+        min-width: initial !important;
+    }
+}

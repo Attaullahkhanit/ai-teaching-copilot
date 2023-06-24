@@ -1,0 +1,43 @@
+
+.card{
+    justify-content: center;
+    margin-left: auto;  
+    margin-right: auto; 
+}
+
+.mypricecardlist ul li::before {
+    color: red;
+    font-weight: bold;
+    display: block; 
+    width: 1em;
+    margin-left: 0px;
+  }
+  .mypricecardlist ul, li{
+        padding-top: 10px;
+        padding-bottom: 3px;
+        text-align: left;
+        justify-content: left;
+  }
+  .createaccountbtn{
+    border-radius: 5px;
+    border: 1px solid #eee;
+    background-color: transparent;
+    color: #aaa;
+    font-size: 14px; 
+    margin-bottom: 25px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  .createaccountbtn:hover{
+    background-color: #0066ff;
+    color: white;
+  }
+  .createaccountbtn::before{
+    background-color: #0066ff;
+    color: white;
+  }
+  .createaccountbtn:focus{
+    background-color: #ff9900;
+    color: white;
+  }
+  

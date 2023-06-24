@@ -1,1 +1,1 @@
-# ai-teaching-copilot
+# ai-online-teacher-copilot
