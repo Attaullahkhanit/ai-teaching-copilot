@@ -25,3 +25,33 @@
     background-color: #f9f9f9;
   }
   
+  .pagination{
+
+  }
+
+.paginationcls  {
+  display: flex;
+  flex-direction: row-reverse;
+}
+.paginationcls a {
+  color: gray;
+  text-decoration: underline;
+  border: 1px solid gray;
+  padding: 6px 15px;
+
+  font-size: 18px;
+  text-decoration: none;
+  align-items: center !important;
+  border-radius: 3px;
+}
+.paginationcls a:hover {
+  background-color: black;
+  color: white;
+}
+.paginationcls .mypricecardlist ul, li {
+  padding-top: 10px;
+  padding-bottom: 3px;
+  text-align: left;
+  justify-content: left;
+  margin-left: 2px;
+}

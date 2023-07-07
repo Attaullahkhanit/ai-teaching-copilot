@@ -18,7 +18,7 @@ localStorage.setItem("jwt-token","9IpbaKhkiaRGjrdRqfIsRlShCsMVQUH9bTw_1S12")
             <div className='bg-dark border-right-3 col-lg-2 col-xl-2 col-auto px-sm-2 px-0'>
                 <SideBar />
             </div>
-            <div className='col py-3 min-vh-100'>
+            <div className='col px-0 min-vh-100'>
                 {props.children}
             </div>
           </div>

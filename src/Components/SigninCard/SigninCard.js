@@ -2,7 +2,6 @@ import React from 'react';
 import { BsFacebook } from "react-icons/bs";
 import { FcGoogle } from "react-icons/fc";
 import { FaApple } from 'react-icons/fa';
-import { Divider } from '@mui/material';
 import { getFileSrcFromPublicimg } from '../../utils';
 import { useState } from 'react';
 import { parse } from 'popper/farms/saucelabs';

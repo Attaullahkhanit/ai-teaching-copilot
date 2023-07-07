@@ -39,7 +39,7 @@ function LessonPlan() {
 
 
   const [loading, setLoading] = useState(false);
-  const [text, setText] = useState('Look at the teacher tips below for some ideas');
+  const [text, setText] = useState('');
 
   const handleTextChange = (event) => {
     setText(event.target.value);
@@ -53,11 +53,16 @@ function LessonPlan() {
   }
 
   const configuration = new Configuration({
-    apiKey: "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",
+    // apiKey: "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",
+    apiKey: "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",
   });
   const openai = new OpenAIApi(configuration);
   const [option, setOption] = useState(arrayItems[0].option);
   const [result, setResult] = useState("");
+
+  let user_id = localStorage.getItem("loginResponse");
+  user_id = JSON.parse(user_id);
+  user_id = user_id.userDetail._id;
 
   const callAIModel = async () => {
     setResult("");
@@ -68,19 +73,29 @@ function LessonPlan() {
       setLoading(false);
       setResult(resp.choices[0].message.content);
      })
-     
+
+     var myHeaders = new Headers();
+      myHeaders.append("Content-Type", "application/json");
+ 
+      var requestOptions = {
+        method: 'PUT',
+        headers: myHeaders,
+         redirect: 'follow'
+      };
+
+      fetch(`https://copilot-bk-node-production.up.railway.app/track_user_free_credits/${user_id}/delete`, requestOptions)
+        .then(response => response.text())
+        .then(result => console.log(result))
+        .catch(error => console.log('error', error));
+      
   };
 
   useEffect(() => {
     result !== "" && setLoading(false);
   }, [result]);
-
-
-  
-  let textresult = result.replace(/\n+/g, "<br>");
-  //  textresult= textresult.replace(/\.(\d)/g, '.$1')
-  //  textresult= textresult.replace(/\./g, '.<br>')
  
+  let textresult = result.replace(/\n+/g, "<br>");
+  
   const savePdf = () => {
     let loginResponse = localStorage.getItem("loginResponse");
     loginResponse = JSON.parse(loginResponse);
@@ -134,7 +149,14 @@ function LessonPlan() {
   }
   return (
     <>
-    <Suspense fallback={<div>Loading...</div>}>
+    <Suspense fallback={<div>
+      <>
+        <div class="d-flex align-items-center">
+          <strong>Loading...</strong>
+          <div class="spinner-border ms-auto" role="status" aria-hidden="true"></div>
+        </div>
+      </>
+    </div>}>
       <Dashbaord>
         <section className="min-vh-100">
           <div className="container-fluid">
@@ -168,15 +190,38 @@ function LessonPlan() {
                   }} />
                 </div> */}
                 
-                {location?.state?.isForEditer ? 
+                {location?.state?.isForEditer ?
+                // 1 Input Free Play
+                <> 
                 <textarea
-                placeholder="Enter your text here"
+                placeholder="Look at the teacher tips below for some ideas, use them to help you write a prompt"
                 value={text}
                 className="form-control"
                 onChange={handleTextChange}
-              />
+                />
+                </>
+
+                // one Input of Age
                 :
-                location?.state?. threeInput ?
+                location?.state?.oneInput ?
+                <>
+                <div className="mt-3">
+                  <p className="fw-bold py-1 my-0">{location?.state?.agelabel}</p>
+                </div>
+                <div class="input-group">
+                  <input
+                    type="text"
+                    value={input3}
+                    onChange={(e) => set3(e.target.value)}
+                    className="form-control"
+                    placeholder={location?.state?.inputAgePlaceH}
+                  />
+                </div>
+                </>
+
+              // Classromm(Assesment Rubrics)/Primary(Spellings) Card no. 3
+                :
+                location?.state?.threeInput ?
                   <>
                 <div className="mt-3">
                   <p className="fw-bold py-1 my-0">{location?.state?.labletopics}</p>
@@ -216,6 +261,270 @@ function LessonPlan() {
                   />
                 </div>
                 </>
+
+                // Communication tools  Card no. 3 Assembly Ideas
+                :
+                location?.state?.assemblyIdeas ?
+                  <>
+                <div className="mt-3">
+                  <p className="fw-bold py-1 my-0">{location?.state?.labletopics}</p>
+                </div>
+                <div class="input-group">
+                  <input
+                    type="text"
+                    value={input2}
+                    onChange={(e) => set2(e.target.value)}
+                    className="form-control"
+                    placeholder={location?.state?.inputPlaceH}
+                  />
+                </div>
+                <div className="mt-3">
+                  <p className="fw-bold py-1 my-0">{location?.state?.contentlabel}</p>
+                </div>
+                <div class="input-group">
+                  <input
+                    type="text"
+                    value={input3}
+                    onChange={(e) => set3(e.target.value)}
+                    className="form-control"
+                    placeholder={location?.state?.inputcontentPlaceH}
+                  />
+                </div>
+
+                <div className="mt-3">
+                  <p className="fw-bold py-1 my-0">{location?.state?.agelabel}</p>
+                </div>
+                <div class="input-group">
+                  <input
+                    type="text"
+                    value={input4}
+                    onChange={(e) => set4(e.target.value)}
+                    className="form-control"
+                    placeholder={location?.state?.inputAgePlaceH}
+                  />
+                </div>
+                </>
+                // 3 inputs of Communication tools / Card No. 1 Parent Emails                  
+                :
+                location?.state?.parentEmail ?
+                  <>
+                <div className="mt-3">
+                  <p className="fw-bold py-1 my-0">{location?.state?.labletopics}</p>
+                </div>
+                <div class="input-group">
+                  <input
+                    type="text"
+                    value={input2}
+                    onChange={(e) => set2(e.target.value)}
+                    className="form-control"
+                    placeholder={location?.state?.inputPlaceH}
+                  />
+                </div>
+                <div className="mt-3">
+                  <p className="fw-bold py-1 my-0">{location?.state?.agelabel}</p>
+                </div>
+                <div class="input-group">
+                  <input
+                    type="text"
+                    value={input3}
+                    onChange={(e) => set3(e.target.value)}
+                    className="form-control"
+                    placeholder={location?.state?.inputAgePlaceH}
+                  />
+                </div>
+
+                <div className="mt-3">
+                  <p className="fw-bold py-1 my-0">{location?.state?.toneLable}</p>
+                </div>
+                <div class="input-group">
+                  <input
+                    type="text"
+                    value={input4}
+                    onChange={(e) => set4(e.target.value)}
+                    className="form-control"
+                    placeholder={location?.state?.inputTone}
+                  />
+                </div>
+                </>
+
+                // 4 inputs of Communication tools / Card No. 4 Parents Evening                  
+                :
+                location?.state?.parentsEvening ?
+                  <>
+                <div className="mt-3">
+                  <p className="fw-bold py-1 my-0">{location?.state?.meetinglable}</p>
+                </div>
+                <div class="input-group">
+                  <input
+                    type="text"
+                    value={input2}
+                    onChange={(e) => set2(e.target.value)}
+                    className="form-control"
+                    placeholder={location?.state?.inputmeetingPlaceH}
+                  />
+                </div>
+                <div className="mt-3">
+                  <p className="fw-bold py-1 my-0">{location?.state?.descriptionLable}</p>
+                </div>
+                <div class="input-group">
+                  <input
+                    type="text"
+                    value={input3}
+                    onChange={(e) => set3(e.target.value)}
+                    className="form-control"
+                    placeholder={location?.state?.inputDescPlaceH}
+                  />
+                </div>
+                <div className="mt-3">
+                  <p className="fw-bold py-1 my-0">{location?.state?.lenghtLable}</p>
+                </div>
+                <div class="input-group">
+                  <input
+                    type="text"
+                    value={input4}
+                    onChange={(e) => set4(e.target.value)}
+                    className="form-control"
+                    placeholder={location?.state?.inputLenghtPlaceH}
+                  />
+                </div>
+
+                <div className="mt-3">
+                  <p className="fw-bold py-1 my-0">{location?.state?.agelabel}</p>
+                </div>
+                <div class="input-group">
+                  <input
+                    type="text"
+                    value={input5}
+                    onChange={(e) => set5(e.target.value)}
+                    className="form-control"
+                    placeholder={location?.state?.inputAgePlaceH}
+                  />
+                </div>
+                </>
+
+                // 4 inputs of Communication tools / Card No. 4 School Newsletter                 
+                :
+                location?.state?.schoolNewsLetter ?
+                  <>
+                <div className="mt-3">
+                  <p className="fw-bold py-1 my-0">{location?.state?.targetLable}</p>
+                </div>
+                <div class="input-group">
+                  <input
+                    type="text"
+                    value={input2}
+                    onChange={(e) => set2(e.target.value)}
+                    className="form-control"
+                    placeholder={location?.state?.inputtargetPlaceH}
+                  />
+                </div>
+                <div className="mt-3">
+                  <p className="fw-bold py-1 my-0">{location?.state?.descLable}</p>
+                </div>
+                <div class="input-group">
+                  <input
+                    type="text"
+                    value={input3}
+                    onChange={(e) => set3(e.target.value)}
+                    className="form-control"
+                    placeholder={location?.state?.inputdescPlaceH}
+                  />
+                </div>
+                <div className="mt-3">
+                  <p className="fw-bold py-1 my-0">{location?.state?.toneLable}</p>
+                </div>
+                <div class="input-group">
+                  <input
+                    type="text"
+                    value={input4}
+                    onChange={(e) => set4(e.target.value)}
+                    className="form-control"
+                    placeholder={location?.state?.inputTonePlaceH}
+                  />
+                </div>
+
+                <div className="mt-3">
+                  <p className="fw-bold py-1 my-0">{location?.state?.wordlabel}</p>
+                </div>
+                <div class="input-group">
+                  <input
+                    type="text"
+                    value={input5}
+                    onChange={(e) => set5(e.target.value)}
+                    className="form-control"
+                    placeholder={location?.state?.inputwordPlaceH}
+                  />
+                </div>
+                </>
+
+                  // 5 inputs of Classroom(create and Play) tools / Card No. 8 Social Media Post
+                :
+                location?.state?.socialMediaPost ?
+                  <>
+                <div className="mt-3">
+                  <p className="fw-bold py-1 my-0">{location?.state?.targetlable}</p>
+                </div>
+                <div class="input-group">
+                  <input
+                    type="text"
+                    value={topicsInput}
+                    onChange={(e) => setTopicInput(e.target.value)}
+                    className="form-control"
+                    placeholder={location?.state?.inputtargetPlaceH}
+                  />
+                </div>
+                <div className="mt-3">
+                  <p className="fw-bold py-1 my-0">{location?.state?.desclable}</p>
+                </div>
+                <div class="input-group">
+                  <input
+                    type="text"
+                    value={input5}
+                    onChange={(e) => set5(e.target.value)}
+                    className="form-control"
+                    placeholder={location?.state?.inputdescPlaceH}
+                  />
+                </div>
+
+                <div className="mt-3">
+                  <p className="fw-bold py-1 my-0">{location?.state?.tonelable}</p>
+                </div>
+                <div class="input-group">
+                  <input
+                    type="text"
+                    value={input6}
+                    onChange={(e) => set6(e.target.value)}
+                    className="form-control"
+                    placeholder={location?.state?.inputTonePlaceH}
+                  />
+                </div>
+                <div className="mt-3">
+                  <p className="fw-bold py-1 my-0">{location?.state?.socialLable}</p>
+                </div>
+                <div class="input-group">
+                  <input
+                    type="text"
+                    value={input7}
+                    onChange={(e) => set7(e.target.value)}
+                    className="form-control"
+                    placeholder={location?.state?.inputSocialPlaceH}
+                  />
+                </div>
+
+                <div className="mt-3">
+                  <p className="fw-bold py-1 my-0">{location?.state?.wordlabel}</p>
+                </div>
+                <div class="input-group">
+                  <input
+                    type="text"value={input8}
+                    onChange={(e) => set8(e.target.value)}
+                    className="form-control"
+                    placeholder={location?.state?.inputwordPlaceH}
+                  />
+                </div>
+                </>
+
+                // 6 inputs of Classroom(create and Play) tools / Card No. 7 Report Writing
                 :
                 location?.state?.reportWriting ?
                   <>
@@ -293,6 +602,85 @@ function LessonPlan() {
                   />
                 </div>
                 </> 
+                // 6 inputs of Communication tools / Card No. 2 Subject Report
+                :
+                location?.state?.subjectReport ?
+                  <>
+                <div className="mt-3">
+                  <p className="fw-bold py-1 my-0">{location?.state?.labletopics}</p>
+                </div>
+                <div class="input-group">
+                  <input
+                    type="text"
+                    value={topicsInput}
+                    onChange={(e) => setTopicInput(e.target.value)}
+                    className="form-control"
+                    placeholder={location?.state?.inputPlaceH}
+                  />
+                </div>
+                <div className="mt-3">
+                  <p className="fw-bold py-1 my-0">{location?.state?.agelabel}</p>
+                </div>
+                <div class="input-group">
+                  <input
+                    type="text"
+                    value={input5}
+                    onChange={(e) => set5(e.target.value)}
+                    className="form-control"
+                    placeholder={location?.state?.inputAgePlaceH}
+                  />
+                </div>
+
+                <div className="mt-3">
+                  <p className="fw-bold py-1 my-0">{location?.state?.areastrenghtLabel}</p>
+                </div>
+                <div class="input-group">
+                  <input
+                    type="text"
+                    value={input6}
+                    onChange={(e) => set6(e.target.value)}
+                    className="form-control"
+                    placeholder={location?.state?.inputareastrenghtPlaceH}
+                  />
+                </div>
+                <div className="mt-3">
+                  <p className="fw-bold py-1 my-0">{location?.state?.areaimprlabel}</p>
+                </div>
+                <div class="input-group">
+                  <input
+                    type="text"
+                    value={input7}
+                    onChange={(e) => set7(e.target.value)}
+                    className="form-control"
+                    placeholder={location?.state?.inputareaimprPlaceH}
+                  />
+                </div>
+
+                <div className="mt-3">
+                  <p className="fw-bold py-1 my-0">{location?.state?.audienceLabel}</p>
+                </div>
+                <div class="input-group">
+                  <input
+                    type="text"value={input8}
+                    onChange={(e) => set8(e.target.value)}
+                    className="form-control"
+                    placeholder={location?.state?.inputaudiencePlaceH}
+                  />
+                </div>
+                <div className="mt-3">
+                  <p className="fw-bold py-1 my-0">{location?.state?.wordcountLabel}</p>
+                </div>
+                <div class="input-group">
+                  <input
+                    type="text"
+                    value={input9}
+                    onChange={(e) => set9(e.target.value)}
+                    className="form-control"
+                    placeholder={location?.state?.inputwordcountPlaceH}
+                  />
+                </div>
+                </> 
+                // 2 input of all cards who have consist two input 
                 :
                 <>
                 <div className="mt-3">

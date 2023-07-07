@@ -1,6 +1,13 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom';
 
-function CCards({formcreativecard}) {
+function CCards({formcreativecard, planStatus}) {
+
+        const navigate = useNavigate()
+        function goToLessonPlan (cardData) {
+            navigate('/lessonplan',{state:cardData} );
+        }
+        
   return (
     <>
         {formcreativecard.map((cardObj) => (
@@ -11,7 +18,10 @@ function CCards({formcreativecard}) {
               <h5 className=''>{cardObj?.title}</h5></div>
             <div><p className=''>{cardObj?.paratext}</p></div>
             <div class="d-grid gap-3 col-11 mx-auto">
-              <button className="btn btn-outline-warning p-1" type="button">{cardObj?.namebtn}</button>
+              {planStatus?
+              <button className="btn btn-outline-warning p-1" type="button" onClick={()=>goToLessonPlan(cardObj)}>{cardObj?.namebtn}</button>:
+              <button className="btn btn-outline-warning p-1" type="button" onClick={()=>navigate('/upgrade')}>Go to Paid plan</button>
+              }
             </div>
         </div>
         ))}

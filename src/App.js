@@ -22,7 +22,6 @@ import { CheckoutForm } from "./Stripe/CheckoutForm";
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
 import TermOfUse from "./Components/Footer/TermOfUse";
-import PaymentForm from "./Stripe/PaymentForm";
 import PaymentPage from "./Pages/PaymentsList/paymentList";
 import ChartPage from "./Pages/ChartPage/ChartPage";
 import FormTutor from "./Pages/Dashboard/FormTutor/FormTutor";
@@ -30,6 +29,9 @@ import ClassRoomTools from "./Pages/Dashboard/ClassRoomTools/ClassRoomTools";
 import PrimaryTools from "./Pages/Dashboard/PrimaryTools/PrimaryTools";
 import SecondaryTools from "./Pages/Dashboard/SecondaryTools/SecondaryTools";
 import CommunicationTools from "./Pages/Dashboard/CommunicationTools.js/CommunicationTools";
+import PrivacyPolicy from "./Components/Footer/PrivacyPolicy";
+import TableTest from "./Pages/TableTest";
+import PaymentTransectionList from "./Pages/PaymentsList/PaymentTransectionList";
 
  function App() {
   const stripePromise = loadStripe("pk_test_51IvIySJzkqBjcDruZRPj6kIra2jdsvhN2LFym7mI6PoNLqiqTHXFUpNGdarjI6kme3qV6aOhPbHvDv133XRa6RgU00rzv1csyo");
@@ -62,6 +64,9 @@ import CommunicationTools from "./Pages/Dashboard/CommunicationTools.js/Communic
         <Route path="pricing" element={<Pricing />} />
         <Route path="contact" element={<Contact />} />
         <Route path="termofuse" element={<TermOfUse />} />
+        <Route path="tabletest" element={<TableTest />} />
+        <Route path="privacypolicy" element={<PrivacyPolicy />} />
+        <Route path="paymenttransectionlist" element= {<PaymentTransectionList />}/>
         <Route path="*" element={<NoPageFind />} />
         {/* main sub pages */}
         {/* Sign in */}
@@ -76,8 +81,7 @@ import CommunicationTools from "./Pages/Dashboard/CommunicationTools.js/Communic
         /> 
         <Route path="/forget-password" element={<ForgottPassword />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/payment" element={<PaymentForm/>} />
-        <Route path="/payment-list" element={<PaymentPage/>} />
+        <Route path="/Paymenttransectionlist" element={<PaymentPage/>} />
         <Route path="/chating" element={<ChartPage/>} />
         <Route path="/register" element={<Register />} />
 

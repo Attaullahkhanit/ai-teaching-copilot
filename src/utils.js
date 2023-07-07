@@ -45,3 +45,33 @@ export const ChatgptApiFunc = async (prompt) => {
 };
 
       
+export const element = {
+  style: {
+    base: {
+      fontSize: "16px",
+      color: "#424770",
+      "::placeholder": {
+        color: "#aab7c4",
+      },
+    },
+    invalid: {
+      color: "#9e2146",
+    },
+  },
+};
+export const listpricingCard2Data = [
+  {
+    title: "For Teachers",
+    price: "£6.99 / £60 Annual",
+    trialHints: [
+      "Full Access",
+      "Email Support",
+      "Premium Tools",
+      "Access Latest Features",
+      "Pro Storage",
+      "Cancel Any Time",
+      "500 Credits",
+    ],
+    btntext: "GO PRO",
+  },
+];

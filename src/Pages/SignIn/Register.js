@@ -98,15 +98,26 @@ function Register() {
       fetch(baseURL+"signup", requestOptions)
         .then(response => response.json())
         .then(result => {
-          setLoader(false)
-          setMessage(result.message)
-          localStorage.setItem('status', result.statu)
-          localStorage.setItem('loginResponse', JSON.stringify(result))
-          console.log(result, 'myresultdata')
-          if (result.statu == true) {
-            navigation("/profile")
-        }
-          
+          var requestOpt = {
+            method: 'POST',
+            headers: myHeaders,
+            body: JSON.stringify({ 
+               trackfreecredits :10,
+               user_id : result?.userDetail._id
+          }),
+            redirect: 'follow'
+          };
+          fetch("https://copilot-bk-node-production.up.railway.app/track_user_free_credits", requestOpt)
+           .then((response) => {
+              setLoader(false)
+              setMessage(result.message)
+              localStorage.setItem('status', result.statu)
+              localStorage.setItem('loginResponse', JSON.stringify(result))
+              console.log(result, 'myresultdata')
+              if (result.statu == true) {
+                navigation("/profile")
+            }
+          })
         }).catch(error => console.log('error', error));
     }
   }

@@ -5,15 +5,18 @@ import { baseURL } from '../../config';
 function CreateAndPlayCards() { 
 
   const [isPaid, setPlanStatus] = useState(false);
-        useEffect(() => {
+          useEffect(() => {
             let loginResponse = localStorage.getItem("loginResponse");
-                loginResponse = JSON.parse(loginResponse);
-        
-            fetch(baseURL+"check-plan-status/"+loginResponse.userDetail._id)
-          .then(response => response.json())
-          .then(result => {
-             setPlanStatus(result?.currentPlan_status)})
-          .catch(error => console.log('error', error));
+                loginResponse = JSON.parse(loginResponse); 
+                  fetch(`https://copilot-bk-node-production.up.railway.app/track_user_free_credits/${loginResponse.userDetail._id}`, {method: 'GET',})
+                  .then(response => response.json())
+                  .then(FreeCreditResult =>{
+                        fetch(baseURL+"check-plan-status/"+loginResponse.userDetail._id)
+                        .then(response => response.json())
+                        .then(result => {
+                          setPlanStatus(FreeCreditResult?.trackcredits>0?true:result?.currentPlan_status?true:false)})
+                        .catch(error => console.log('error', error)); 
+                    }).catch(error => console.log('error', error));
         }, [ ]);  
 
 

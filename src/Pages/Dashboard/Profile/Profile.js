@@ -8,6 +8,7 @@ import { getFileSrcFromPublicimg } from "../../../utils";
 import { RiFacebookFill } from "react-icons/ri";
 import { AiFillYoutube } from "react-icons/ai";
 import { baseURL } from "../../../config";
+import { useEffect } from "react";
 
 function Profile() {
   let loginResponse = localStorage.getItem("loginResponse");
@@ -18,6 +19,7 @@ function Profile() {
   const [emailError, setEmailError] = useState(null);
   const [updateError, setUpdateError] = useState(null);
   const [updateSuccess, setUpdateSuccess] = useState(false);
+  const [gggg, setujmtns] = useState(false);
 
   const handleNameChange = (e) => {
     setName(e.target.value);
@@ -68,8 +70,17 @@ function Profile() {
         }
       };
 
-  
+      useEffect(() => {
+        let loginResponse = localStorage.getItem("loginResponse");
+            loginResponse = JSON.parse(loginResponse); 
+            fetch(baseURL+`check-plan-status/${loginResponse.userDetail._id}`, {method: 'GET',})
+            .then(response => response.json())
+            .then(freeCreditResult => setujmtns(freeCreditResult.currentPlan_status))
+            .catch(error => console.log('error', error));
+    }, [ ]);
 
+  
+console.log(gggg, 'ggg  gggg')
   return (
     <>
       <Dashbaord>
@@ -84,6 +95,36 @@ function Profile() {
                       <div>
                         <h6>Billing</h6>
                       </div>
+
+                      {/* Free Credits greater then 0 */}
+                      {gggg == true ?
+                      <>
+                      <div
+                        className="text-secondary pt-2"
+                        style={{ fontSize: "14px" }}
+                      >
+                        Current Plan
+                      </div>
+                      <h4 className="text-primary">Monthly Plan</h4>
+
+                      <div
+                        className="text-secondary pt-2"
+                        style={{ fontSize: "14px" }}
+                      >
+                        Next Billing Date
+                      </div>
+                      <h6>after each 30 days</h6>
+
+                      <div
+                        className="text-secondary pt-2"
+                        style={{ fontSize: "14px" }}
+                      >
+                        Monthly Charge
+                      </div>
+                      <h6>£6.99/Month</h6>
+                      </>
+                      :
+                      <>
                       <div
                         className="text-secondary pt-2"
                         style={{ fontSize: "14px" }}
@@ -107,7 +148,10 @@ function Profile() {
                         Monthly Charge
                       </div>
                       <h6>£0.00/Month</h6>
+                      </>
+                      }
                     </div>
+
                     <div className="col-lg-9 border-start border-2 my-4">
                       <div>
                         <h6>Personal Details</h6>

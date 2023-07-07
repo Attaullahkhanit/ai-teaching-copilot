@@ -8,8 +8,6 @@ import { BrowserRouter} from 'react-router-dom';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import 'bootstrap/dist/js/bootstrap.js';
 import 'bootstrap/dist/js/bootstrap.bundle';
-import $ from 'jquery';
-import Popper from 'popper.js';
 import 'bootstrap/js/dist/dropdown.js';
 
 

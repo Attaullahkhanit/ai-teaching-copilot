@@ -17,14 +17,15 @@
 /* .menu-item {
     height: 100vh;
 } */
-
+.nav-pills {
+    margin-left: none;
+}
 .nav-pills li .menuitemfont{
     font-size: 14px;
     padding: 0px !important;
 }
 
 .upgradbottom {
-    margin-top: 30px;
     width: 100%;
 }
 .menu-item{
@@ -38,6 +39,27 @@
     background-color: #ff9900;
     color: white;
 }
+@media only screen and (max-width: 578px) {
+    .nav-Link {
+      text-align:center;
+    }
+    .menu-item {
+        text-align: center;
+        width: 46px;
+        justify-content: center;
+    }
+    .t-c-transpLogo {
+        max-width: 50px;
+        height: 30px;
+    }
+    .dashboardmenulink {
+        text-align: center;
+        justify-content: center;
+    }
+    
+  }
+
+
 
 
 

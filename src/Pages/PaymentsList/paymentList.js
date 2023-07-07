@@ -10,7 +10,6 @@ const PaymentPage = () => {
   const [currentPage, setCurrentPage] = useState(1);
 
 
-
   useEffect(() => {
     fetch(baseURL+"get_all_payments")
       .then((response) => response.json())
@@ -41,22 +40,7 @@ const PaymentPage = () => {
   const npage = Math.ceil(payments.length / recordsPerPage);
   const numbers = [...Array(npage + 1).keys()].slice(1);
 
-  function prePage() {
-    if(currentPage !==  firstIndex){
-      setCurrentPage(currentPage - 1)
-    }
-  }
-
-  function changeCPage(id) {
-    setCurrentPage(id)
-  }
-
-
-  function nextPage() {
-    if(currentPage !==  lastIndex){
-      setCurrentPage(currentPage + 1)
-    }
-  }
+  
 
   
   return (
@@ -97,25 +81,6 @@ const PaymentPage = () => {
                 ))}
               </tbody>
             </table>
-            <nav className="">
-              <ul className="pagination">
-                  <li className="page-item">
-                     <Link to='' className="page-link" >Prev</Link>
-                  </li>
-                  {
-                    numbers.map((n, i) => (
-                    <li key={i} >
-                      <Link to='' className="page-link"  >
-                        {n}
-                      </Link>
-                    </li>    
-                  ))
-                  }
-                  <li className="page-item">
-                     <Link to='' className="page-link" >Next</Link>
-                  </li>
-              </ul>
-            </nav>
             </div>
           </div>
         </div>

@@ -20,7 +20,7 @@ function Cards({createandplaycard, planStatus}) {
             <div><p className=''>{cardObj?.paratext}</p></div>
             <div class="d-grid gap-3 col-11 mx-auto">
             {planStatus? <button className="btn btn-outline-warning p-1" type="button" onClick={()=>goToLessonPlan(cardObj)}>{cardObj?.namebtn}</button>:
-            <button className="btn btn-outline-warning p-1" type="button" onClick={()=>navigate('/CheckoutForm')}>Go to Paid plan</button>}
+            <button className="btn btn-outline-warning p-1" type="button" onClick={()=>navigate('/upgrade')}>Go to Paid plan</button>}
             </div>
         </div>
         ))}

@@ -3,8 +3,6 @@ import './Pricing.css';
 import PricingCard from '../../Components/PricingCard/PricingCard';
 import Navbar from '../../Components/Navbar/Navbar';
 import Footer from '../../Components/Footer/Footer';
-import ToggleButton from '@mui/material/ToggleButton';
-import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 
 function Pricing() {
       const [alignment, setAlignment] = React.useState('Monthly');
@@ -31,7 +29,7 @@ function Pricing() {
           price: '£6.99 / £60 Annual',
           trialHints:[ 'Full Access','Email Support','Premium Tools','Access Latest Features','Pro Storage','Cancel Any Time','500 Credits'],
           btntext: 'GO PRO',
-          navigat: '/CheckoutForm'
+          navigat: '/register'
         }
       ]
     const listpricingCard3Data =

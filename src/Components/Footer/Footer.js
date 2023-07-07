@@ -38,7 +38,7 @@ function Footer() {
                      </div>
                      <div>
                         <Link className="text-primary text-decoration-none px-4 px-sm-1" to="/termofuse"> Terms of use</Link>
-                        <Link className="text-primary text-decoration-none px-sm-1" to="#!"> Privacy Policy</Link>
+                        <Link className="text-primary text-decoration-none px-sm-1" to="/privacypolicy"> Privacy Policy</Link>
                      </div>
                 </div>
             </footer>

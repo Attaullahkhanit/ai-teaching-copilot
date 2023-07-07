@@ -8,7 +8,7 @@ function CreateAndPlay() {
       <Dashbaord>
         <div className="min-vh-100" style={{ backgroundColor: "#f0f8ff" }}>
           <div>
-            <h4 className=" text-white fw-bold py-2 px-3" style={{backgroundColor: '#036CFF'}}>Create & Play</h4>
+            <h4 className=" text-white fw-bold py-2 px-3" style={{backgroundColor: '#036CFF'}}>Classroom</h4>
           </div>
           <CreateAndPlayCards />
         </div>
