@@ -43,21 +43,15 @@ function Downloads() {
     <>
       <Dashbaord>
         <section className="min-vh-100" style={{ backgroundColor: "#f0f8ff" }}>
-          <div className="container-fluid">
-            <div className="d-flex justify-content-between pt-2">
-              <div className="">
-                <h4>
-                  <span className="fw-bold">My Downloads</span>
-                </h4>
-                <p>
-                Easily review, download and delete files as needed.<br/>
-                The download section offers convenient access to your saved lesson plans and assessment rubrics.
+                <h4 className=" text-white fw-bold py-2 px-3 mt-0" style={{backgroundColor: '#036CFF'}}>Downloads</h4>                
+                <p className="mx-3">
+                  Easily review, download and delete files as needed.<br/>
+                  The download section offers convenient access to your saved lesson plans and assessment rubrics.
                 </p>
-              </div>
+          <div className="container-fluid">
               {/* <div className='ml-auto'>
                 <button type='button' className='btn border-primary py-0 rounded-5 border border-2 text-primary fs-5'><MdOutlineAdd className='fs-3 fw-bolder text-primary pb-1' /><span className='text-dark fw-bold px-1'>Request a New Tool</span></button>
               </div> */}
-            </div>
             {/* <div className="row my-3">
               <div className="py-3 text-secondary" style={{ fontSize: "14px" }}>
                 Folders
@@ -67,8 +61,10 @@ function Downloads() {
               </div>
                
             </div> */}
-             <div className="py-3 text-secondary" style={{ fontSize: "14px" }}>
-                Recent Creations
+              <div className="row">
+                <div className="py-3 text-secondary" style={{ fontSize: "14px" }}>
+                  Recent Creations
+                </div>
               </div>
             <div className="row my-3">
               <>
@@ -83,8 +79,8 @@ function Downloads() {
               </div>)
               }):
               <h3 style={{textAlign:"center"}}>Record not found</h3>
-            }
-            </>
+              }
+              </>
             </div>
           </div>
         </section>

@@ -136,6 +136,10 @@ export const CheckoutForm = () => {
 
   return (
       <Dashbaord>
+        <div className="min-vh-100" style={{ backgroundColor: "#f0f8ff" }}>
+        <div>
+            <h4 className=" text-white fw-bold py-2 px-3" style={{backgroundColor: '#036CFF'}}>Pay Payment Form</h4>
+        </div>
           <div className="container-fluid">
             <div className="row ">
               <div className="col-md-6">
@@ -188,6 +192,7 @@ export const CheckoutForm = () => {
                   </form>
                 </div>
             </div>
+          </div>
           </div>
         <ToastContainer />
       </Dashbaord>

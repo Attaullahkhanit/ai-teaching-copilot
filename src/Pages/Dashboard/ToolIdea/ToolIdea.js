@@ -56,10 +56,14 @@ function ToolIdea() {
     <>
         <Dashbaord>
             <div className="toolidea">
+            <div className="min-vh-100" style={{ backgroundColor: "#f0f8ff" }}>
+            <div>
+                <h4 className=" text-white fw-bold py-2 px-3" style={{backgroundColor: '#036CFF'}}>Tool Idea</h4>
+            </div>
               <div className="container">
                 <div className="row py-1">
                   <div className="col-lg-5 col-md-12 col-sm-12">
-                    <div className="card px-lg-5 pt-lg-5 pb-lg-0 px-sm-3 my-3 border-0">
+                    <div className="card px-lg-5 py-lg-5 px-sm-3 mt-5 border-0">
                     <h3 className="fw-bold"><i className='bi bi-tools text-primary'/> Tool Idea</h3>
                     <p>Have a great idea that you want to share with us. In the message box write the following:
                       <ol >
@@ -72,7 +76,7 @@ function ToolIdea() {
                     </div>
                   </div>
                   <div className="col-lg-7 col-md-12 col-sm-12">
-                    <div className="form border-0 px-lg-5 pt-lg-5 pb-lg-0 px-sm-2 rounded my-3 w-100">
+                    <div className="form border-0 px-lg-5 pt-lg-5 pb-lg-0 px-sm-2 rounded my-1 w-100">
                       <div className="row mx-0 py-3">
                         <input
                           type="name"
@@ -135,6 +139,7 @@ function ToolIdea() {
                     </div>
                   </div>
                 </div>
+              </div>
               </div>
             </div>
         </Dashbaord>

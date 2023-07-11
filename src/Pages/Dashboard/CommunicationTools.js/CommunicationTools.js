@@ -24,6 +24,7 @@ function CommunicationTools() {
 
         const formtutorcarditems1 = [
           { cardicon: "bi bi-envelope-at fs-3 text-primary",
+          tooltitle: 'Communication',
             title : 'Parent Emails',
             p1:" prompt: `Primary Prompt: Can you prepare a lesson plan for the following topic: ",
             p2:"Secondary Prompt: The age of the students is identified below: ",
@@ -65,6 +66,7 @@ function CommunicationTools() {
 
       const formtutorcarditems2 = [
           { cardicon: "bi bi-view-list fs-3 text-primary",
+          tooltitle: 'Communication',
             title : 'Subject Reports',
             p1:" prompt: `Primary Prompt: I want you to create a written report for a classroom teacher the subject is [Subject], the students name is [Name], their strengths are [Strengths]. The area for improvement is [Improvement]. The report is being written for a student who is [Age]. This report should have a word count of [Word Count]. ",
             p2:"Secondary Prompt: The age of the students is identified below: ",
@@ -112,6 +114,7 @@ function CommunicationTools() {
 
           const formtutorcarditems3 = [
           { cardicon: "bi bi-activity fs-3 text-primary",
+          tooltitle: 'Communication',
             title : 'Assembly Ideas',
             p1:" prompt: `Primary Prompt: I am a teacher can you help me to create content for an assembly I will be delivering. The topic is [TOPIC], be sure to include the following content [CONTENT]. The assembly must be suitable for pupils aged [AGE].The output should include content that can be copied directly into a powerpoint.",
             p2:"Secondary Prompt: The age of the students is identified below: ",
@@ -154,6 +157,7 @@ function CommunicationTools() {
 
           const formtutorcarditems4 = [
           { cardicon: "bi bi-people-fill fs-3 text-primary",
+          tooltitle: 'Communication',
             title : 'Parents Evening',
             p1:" prompt: `Primary Prompt: I am a school teacher can you help to structure my [Meeting]. The [Meeting] will cover [description] and should last for approximately [Length]. Consider that the [Meeting] should be suitable for pupils aged [AGE] ",
             p2:"Secondary Prompt: The age of the students is identified below: ",
@@ -195,6 +199,7 @@ function CommunicationTools() {
       ]
       const formtutorcarditems5 = [
           { cardicon: "bi bi-newspaper fs-3 text-primary",
+          tooltitle: 'Communication',
             title : 'School Newsletters',
             p1:" prompt: `Primary Prompt: I want you to create a friendly school newsletter. It should be targeted at [Audience] and will need to include [Description]. It should be written in a [Tone] tone. The newsletter will be output with a word count of [Count]. ",
             p2:"Secondary Prompt: The age of the students is identified below: ",
@@ -239,6 +244,7 @@ function CommunicationTools() {
       ]
       const formtutorcarditems6 = [
           { cardicon: "bi bi-card-checklist fs-3 text-primary",
+          tooltitle: 'Communication',
             title : 'Permission Slips',
             p1:" prompt: `Primary Prompt: I am a school leader and want you to prepare a permission slip for [Audience]. The permission slip will need to include [Description]",
             p2:"Secondary Prompt: The age of the students is identified below: ",
@@ -273,6 +279,7 @@ function CommunicationTools() {
       ]
       const formtutorcarditems7 = [
           { cardicon: "bi bi-wechat fs-3 text-primary",
+          tooltitle: 'Communication',
             title : 'Positive Message',
             p1:" prompt: `Primary Prompt: Can you prepare a lesson plan for the following topic: ",
             p2:"Secondary Prompt: The age of the students is identified below: ",
@@ -319,6 +326,7 @@ function CommunicationTools() {
       ]
       const formtutorcarditems8 = [
           { cardicon: "bi bi-telegram fs-3 text-primary",
+          tooltitle: 'Communication',
             title : 'Social Media Post',
             p1:" prompt: `Primary Prompt: I am a school teacher and I want you to create a social media post on the schools social media channels. The post will be shared with [Audience] and will include [Description]. It should be written in a [Tone] tone. Can you create an output for [SocialMedia] with a word count of [Count].  ",
             p2:"Secondary Prompt: The age of the students is identified below: ",

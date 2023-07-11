@@ -10,7 +10,7 @@ export const getFileSrcFromPublicimg= (name) => {
 //const API_KEY = "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";
 //const API_KEY = "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";
 //const API_KEY = "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";
-const API_KEY = "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";
+const API_KEY = "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";
 const systemMessage = {
   "role": "system",
   "content": ""

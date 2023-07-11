@@ -54,7 +54,8 @@ function LessonPlan() {
 
   const configuration = new Configuration({
     // apiKey: "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",
-    apiKey: "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",
+    //apiKey: "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",
+    apiKey: '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'
   });
   const openai = new OpenAIApi(configuration);
   const [option, setOption] = useState(arrayItems[0].option);
@@ -149,16 +150,13 @@ function LessonPlan() {
   }
   return (
     <>
-    <Suspense fallback={<div>
-      <>
-        <div class="d-flex align-items-center">
-          <strong>Loading...</strong>
-          <div class="spinner-border ms-auto" role="status" aria-hidden="true"></div>
-        </div>
-      </>
-    </div>}>
+    <Suspense fallback={<div>Loading...</div>}>
       <Dashbaord>
         <section className="min-vh-100">
+        <div className="min-vh-100" style={{ backgroundColor: "#f0f8ff" }}>
+        <div>
+            <h4 className="text-white fw-bold py-2 px-3" style={{backgroundColor: '#036CFF'}}>{location?.state?.tooltitle}</h4>
+        </div>
           <div className="container-fluid">
             <div className="align-item-center py-3 fw-bold fs-5">
               {/* <BsArrowLeft className="text-primary fs-5 " />
@@ -166,7 +164,6 @@ function LessonPlan() {
                 onClick={gotToCreateAndPlayPage}
                 className="text-primary text-decoration-none pe-auto px-2"
               > */}
-                <h4 className="fw-bold">Create & Play</h4>
               {/* </span> */}
             </div>
             <div className="row px-3">
@@ -468,6 +465,7 @@ function LessonPlan() {
                   <input
                     type="text"
                     value={topicsInput}
+                    minHeight="100px"
                     onChange={(e) => setTopicInput(e.target.value)}
                     className="form-control"
                     placeholder={location?.state?.inputtargetPlaceH}
@@ -780,6 +778,7 @@ function LessonPlan() {
                 )}
               </div>
             </div>
+          </div>
           </div>
         </section>
       </Dashbaord>

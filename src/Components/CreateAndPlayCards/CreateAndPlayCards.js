@@ -3,7 +3,6 @@ import Cards from './Cards'
 import { baseURL } from '../../config';
   
 function CreateAndPlayCards() { 
-
   const [isPaid, setPlanStatus] = useState(false);
           useEffect(() => {
             let loginResponse = localStorage.getItem("loginResponse");
@@ -22,6 +21,7 @@ function CreateAndPlayCards() {
 
         const createandplaycardsitems1 = [
             { cardicon: "bi bi-calendar-event fs-3 text-primary",
+              tooltitle: 'Classroom',
               title : 'Lesson Plan',
               p1:" prompt: `Primary Prompt: Can you prepare a lesson plan for the following topic: ",
               p2:"Secondary Prompt: The age of the students is identified below: ",
@@ -56,6 +56,7 @@ function CreateAndPlayCards() {
         ]
         const createandplaycardsitems2 = [
             { cardicon: "bi bi-alarm fs-3 text-primary",
+              tooltitle: 'Classroom',
               title : 'Quiz Time',
               p1:"Can you prepare a multiple choice quiz: ",
               p2:"Secondary Prompt: The age of the students is identified below: ",
@@ -87,6 +88,7 @@ function CreateAndPlayCards() {
         ]
         const createandplaycardsitems3 = [
             { cardicon: 'bi bi-filetype-rb fs-3 text-primary',
+              tooltitle: 'Classroom',
               title : 'Assessment Rubric',
               p1:"Primary Prompt: Below I will identify the skills or competencies to be assessed",
               p2:"Secondary Prompt: The age of the students is identified below:",
@@ -121,13 +123,14 @@ function CreateAndPlayCards() {
         ]
         const createandplaycardsitems4 = [
             { cardicon: 'bi bi-activity fs-3 text-primary',
+              tooltitle: 'Classroom',
               title : 'Idea Generator',
-              p1:"Primary Prompt: Below I will identify the topic that I would like to generate ideas for.",
+              p1:"Primary Prompt: I am a school teacher, can you generate ideas for the following topic [Topic]. The ideas generated must be suitable for pupils aged [AGE].",
               p2:"Secondary Prompt: The age of the students is identified below:",
               p3:"",
               labletopics: `Choose a Topic (to generate idea for)`,
               agelabel: 'Audience Age', 
-              inputPlaceH: 'Default: Plant Cells, Macbeth, Rounding, Romans',
+              inputPlaceH: 'Example: Plant Cells, Macbeth, Rounding, Romans',
               inputAgePlaceH: 'Default: Aged 11',
               paratext: 'Generate ideas for activities , homework or just about anything else.',
               namebtn: 'Launch',
@@ -152,6 +155,7 @@ function CreateAndPlayCards() {
 
         const createandplaycardsitems5 = [
             { cardicon: 'bi bi-envelope-at fs-3 text-primary',
+              tooltitle: 'Classroom',
               title : 'Parent Emails',
               p1:"Primary Prompt: Can you prepare an email for: ",
               p2:"Secondary Prompt: The email will need to include:",
@@ -204,37 +208,39 @@ function CreateAndPlayCards() {
             }
         ]
         const createandplaycardsitems6 = [
-            { cardicon: 'bi bi-pencil-square fs-3 text-primary',
-              title : 'Writing Tasks',
-              p1:"  ",
-              p2:"  ",
-              p3:"",
-              labletopics: 'Topic or Lesson Content',
-              inputPlaceH: 'Default: what topic or lesson do you want discussion questions for. e.g Creative Writing, Careers, Percentages, Sustainability, Healthy Eating',
-              agelabel: 'Audience Age',
-              inputAgePlaceH: 'Default: Aged 11', 
-              paratext: 'Want help with summarising content or providing an outline of written work.',
-              namebtn: 'Launch',
-              Notes_content: `<p>Generate ten thought provoking questions, they could be used as a starter or plenary activity, to encourage critical thinking and generate collaboration in the classroom.</p>`, 
-              isPdf:false,
-
-              chatGPTOption:{
-                    name: "Writing Tasks",
-                    id: "writingtasks",
-                    description: "Want help with summarising content or providing an outline of written work.",
-                    option: {
-                    model: "gpt-3.5-turbo",
-                    temperature: 0,
-                    max_tokens: 100,
-                    top_p: 1,
-                    frequency_penalty: 0.0,
-                    presence_penalty: 0.0,
-                    },
-                },
+            { cardicon: 'bi bi-chat-dots fs-3 text-primary',
+            tooltitle: 'Classroom',
+            title : 'Discussion Questions',
+            p1:"Primary Prompt: Below I will identify the topic or concept that I would like you to create a numbered list of ten thought provoking questions.",
+            p2:"Secondary Prompt: The age of the students is identified below:",
+            p3:"",
+            labletopics: 'Audience',
+            inputPlaceH: 'Default: Creative Writing, Careers, Percentages, Sustainability, Healthy Eating',
+            agelabel: 'Audience Age', 
+            inputAgePlaceH: 'Default: Aged 11',
+            paratext: 'Want a range of thought provoking discussion questions to engage your pupils, just add a topic.',
+            namebtn: 'Launch',
+            Notes_content: `<p>Generate ten thought provoking questions, they could be used as a starter or plenary activity, to encourage critical thinking and generate collaboration in the classroom.</p>
+            `,
+            isPdf:false,
+            chatGPTOption:{
+                  name: "Free Play",
+                  id: "freeplay",
+                  description: "Do you have an idea of your own and want to use our co-pilot without restrictions? Then let the fun begin.",
+                  option: {
+                  model: "gpt-3.5-turbo",
+                  temperature: 0,
+                  max_tokens: 100,
+                  top_p: 1,
+                  frequency_penalty: 0.0,
+                  presence_penalty: 0.0,
+                  },
+              },
             }
         ]
         const createandplaycardsitems7 = [
             { cardicon: 'bi bi-ticket-detailed fs-3 text-primary',
+              tooltitle: 'Classroom',
               title : 'Report Writing',
               p1:"Primary Prompt: I want you to create a written report for the classroom teacher consider, the students name, type of report, strength, area for improvement. Finally provide the amount of alternative written reports identified below:",
               p2:"",
@@ -283,6 +289,7 @@ function CreateAndPlayCards() {
         ]
         const createandplaycardsitems8 = [
             { cardicon: 'bi bi-file-play fs-3 text-primary',
+              tooltitle: 'Classroom',
               title : 'Free Play',
               p1:"Look at the teacher tips below for some ideas",
               p2:"",
@@ -324,6 +331,7 @@ function CreateAndPlayCards() {
 
         const createandplaycardsitems9 = [
             { cardicon: 'bi bi-alexa fs-3 text-primary',
+              tooltitle: 'Classroom',
               title : 'Simplifying',
               p1:"Primary Prompt: Below I will identify the topic or concept that I would like you to break down so that it is easy to understand.",
               p2:"Secondary Prompt: The age of the students is identified below: ",
@@ -355,6 +363,7 @@ function CreateAndPlayCards() {
         ]
         const createandplaycardsitems10 = [
             { cardicon: 'bi bi-chat-dots fs-3 text-primary',
+              tooltitle: 'Classroom',
               title : 'Discussion Questions',
               p1:"Primary Prompt: Below I will identify the topic or concept that I would like you to create a numbered list of ten thought provoking questions.",
               p2:"Secondary Prompt: The age of the students is identified below:",
@@ -384,17 +393,18 @@ function CreateAndPlayCards() {
             }
         ]
 
-        const createandplaycardsitems11 = [
+          const createandplaycardsitems11 = [
             { cardicon: 'bi bi-inbox-fill fs-3 text-primary',
+              tooltitle: 'Classroom',
               title : 'Fill The Blanks',
               p1:"Primary Prompt: Below I will identify the topic or concept that I would like you to create a fill the blank worksheet with 8 answers. It will use a paragraph structure with underscores for the missing answer and the answer key will be placed at the bottom. The title of the worksheet should be placed at the top in bold",
               p2:"Secondary Prompt: The age of the students is identified below:",
               p3:"",
-              labletopics: 'Topic',
+              labletopics: 'Lesson or Topic:',
               inputPlaceH: 'Default: Plant Cells, Macbeth, Rounding, Romans',
-              agelabel: 'Audience Age', 
+              agelabel: 'Pupil Age:', 
               inputAgePlaceH: 'Default: Aged 11',
-              paratext: 'Do you have an idea of your own and want to use our co-pilot without restrictions? Then let the fun begin.',
+              paratext: 'Create a fill the blanks worksheet to help improve students memory and comprehension.',
               namebtn: 'Launch',
               Notes_content: `<p>Create a fill the blank worksheet in seconds, here are some examples:</p>
               <ul>
@@ -418,6 +428,151 @@ function CreateAndPlayCards() {
                     },
                 },
             }
+        ]
+          const createandplaycardsitems12 = [
+            { 
+              cardicon: 'bi bi-escape fs-3 text-primary',
+              tooltitle: 'Classroom',
+              title : 'Escape Room',
+              p1:"Primary Prompt: Below I will identify the topic or concept that I would like you to create a fill the blank worksheet with 8 answers. It will use a paragraph structure with underscores for the missing answer and the answer key will be placed at the bottom. The title of the worksheet should be placed at the top in bold",
+              p2:"Secondary Prompt: The age of the students is identified below:",
+              p3:"",
+              labletopics: 'Topic',
+              inputPlaceH: 'Default: Plant Cells, Macbeth, Rounding, Romans',
+              agelabel: 'Audience Age', 
+              inputAgePlaceH: 'Default: Aged 11',
+              paratext: 'Engage students with an exciting escape room experience, where they solve puzzles and unravel mysteries together.',
+              namebtn: 'Launch',
+              Notes_content: `<p>Create a fill the blank worksheet in seconds, here are some examples:</p>
+              <ul>
+                <li>Components of a system</li>
+                <li>Elements of the  table</li>
+                <li>Days and months in </li>
+              </ul>
+              <p>Within the description, please indicate whether you require any variations and consider the length of the fill-in-the-blank sections.</p>`,
+              isPdf:false,
+              chatGPTOption:{
+                    name: "Free Play",
+                    id: "freeplay",
+                    description: "Do you have an idea of your own and want to use our co-pilot without restrictions? Then let the fun begin.",
+                    option: {
+                    model: "gpt-3.5-turbo",
+                    temperature: 0,
+                    max_tokens: 100,
+                    top_p: 1,
+                    frequency_penalty: 0.0,
+                    presence_penalty: 0.0,
+                    },
+                },
+            }
+        ]
+        const createandplaycardsitems13 = [
+          { cardicon: 'bi bi-youtube fs-3 text-danger',
+            tooltitle: 'Classroom',
+            title : 'Youtube Video',
+            p1:"Primary Prompt: Below I will identify the topic or concept that I would like you to create a fill the blank worksheet with 8 answers. It will use a paragraph structure with underscores for the missing answer and the answer key will be placed at the bottom. The title of the worksheet should be placed at the top in bold",
+            p2:"Secondary Prompt: The age of the students is identified below:",
+            p3:"",
+            labletopics: 'Topic',
+            inputPlaceH: 'Default: Plant Cells, Macbeth, Rounding, Romans',
+            agelabel: 'Audience Age', 
+            inputAgePlaceH: 'Default: Aged 11',
+            paratext: 'Create questions from YouTube video transcripts to help promote activity listening.',
+            namebtn: 'Launch',
+            Notes_content: `<p>Create a fill the blank worksheet in seconds, here are some examples:</p>
+            <ul>
+              <li>Components of a system</li>
+              <li>Elements of the  table</li>
+              <li>Days and months in </li>
+            </ul>
+            <p>Within the description, please indicate whether you require any variations and consider the length of the fill-in-the-blank sections.</p>`,
+            isPdf:false,
+            chatGPTOption:{
+                  name: "Free Play",
+                  id: "freeplay",
+                  description: "Do you have an idea of your own and want to use our co-pilot without restrictions? Then let the fun begin.",
+                  option: {
+                  model: "gpt-3.5-turbo",
+                  temperature: 0,
+                  max_tokens: 100,
+                  top_p: 1,
+                  frequency_penalty: 0.0,
+                  presence_penalty: 0.0,
+                  },
+              },
+          }
+      ]
+        const createandplaycardsitems14 = [
+          { cardicon: 'bi bi-motherboard fs-3 text-primary',
+            tooltitle: 'Classroom',
+            title : 'Ai Detection',
+            p1:"Primary Prompt: Below I will identify the topic or concept that I would like you to create a fill the blank worksheet with 8 answers. It will use a paragraph structure with underscores for the missing answer and the answer key will be placed at the bottom. The title of the worksheet should be placed at the top in bold",
+            p2:"Secondary Prompt: The age of the students is identified below:",
+            p3:"",
+            labletopics: 'Topic',
+            inputPlaceH: 'Default: Plant Cells, Macbeth, Rounding, Romans',
+            agelabel: 'Audience Age', 
+            inputAgePlaceH: 'Default: Aged 11',
+            paratext: 'Create a series of questions to assess if students coursework or assignment is their own.',
+            namebtn: 'Launch',
+            Notes_content: `<p>Create a fill the blank worksheet in seconds, here are some examples:</p>
+            <ul>
+              <li>Components of a system</li>
+              <li>Elements of the  table</li>
+              <li>Days and months in </li>
+            </ul>
+            <p>Within the description, please indicate whether you require any variations and consider the length of the fill-in-the-blank sections.</p>`,
+            isPdf:false,
+            chatGPTOption:{
+                  name: "Free Play",
+                  id: "freeplay",
+                  description: "Do you have an idea of your own and want to use our co-pilot without restrictions? Then let the fun begin.",
+                  option: {
+                  model: "gpt-3.5-turbo",
+                  temperature: 0,
+                  max_tokens: 100,
+                  top_p: 1,
+                  frequency_penalty: 0.0,
+                  presence_penalty: 0.0,
+                  },
+              },
+          }
+      ]
+        const createandplaycardsitems15 = [
+          { cardicon: 'bi bi-activity fs-3 text-primary',
+            tooltitle: 'Classroom',
+            title : 'Rhyme Generator',
+            p1:"Primary Prompt: Below I will identify the topic or concept that I would like you to create a fill the blank worksheet with 8 answers. It will use a paragraph structure with underscores for the missing answer and the answer key will be placed at the bottom. The title of the worksheet should be placed at the top in bold",
+            p2:"Secondary Prompt: The age of the students is identified below:",
+            p3:"",
+            labletopics: 'Topic',
+            inputPlaceH: 'Default: Plant Cells, Macbeth, Rounding, Romans',
+            agelabel: 'Audience Age', 
+            inputAgePlaceH: 'Default: Aged 11',
+            paratext: 'Use the Rhyme generator to entertain, engage and inspire pupils in the class. Just add keywords.',
+            namebtn: 'Launch',
+            Notes_content: `<p>Create a fill the blank worksheet in seconds, here are some examples:</p>
+            <ul>
+              <li>Components of a system</li>
+              <li>Elements of the  table</li>
+              <li>Days and months in </li>
+            </ul>
+            <p>Within the description, please indicate whether you require any variations and consider the length of the fill-in-the-blank sections.</p>`,
+            isPdf:false,
+            chatGPTOption:{
+                  name: "Free Play",
+                  id: "freeplay",
+                  description: "Do you have an idea of your own and want to use our co-pilot without restrictions? Then let the fun begin.",
+                  option: {
+                  model: "gpt-3.5-turbo",
+                  temperature: 0,
+                  max_tokens: 100,
+                  top_p: 1,
+                  frequency_penalty: 0.0,
+                  presence_penalty: 0.0,
+                  },
+              },
+          }
         ]
 
         
@@ -462,7 +617,21 @@ function CreateAndPlayCards() {
                 </div>
                 <div className='col-lg-3 col-md-6 col-sm-6 d-flex align-items-stretch'>
                     <Cards planStatus={isPaid} createandplaycard ={[...createandplaycardsitems11]}/>
+                </div>
+                <div className='col-lg-3 col-md-6 col-sm-6 d-flex align-items-stretch'>
+                    <Cards planStatus={isPaid} createandplaycard ={[...createandplaycardsitems12]}/>
                 </div> 
+            </div>
+            <div className='row my-lg-3 my-md-3'>
+                <div className='col-lg-3 col-md-6 col-sm-6 d-flex  align-items-stretch'>
+                    <Cards planStatus={isPaid} createandplaycard ={[...createandplaycardsitems13]}/>
+                </div>
+                <div className='col-lg-3 col-md-6 col-sm-6 d-flex align-items-stretch'>
+                    <Cards planStatus={isPaid} createandplaycard ={[...createandplaycardsitems14]}/>
+                </div>
+                <div className='col-lg-3 col-md-6 col-sm-6 d-flex align-items-stretch'>
+                    <Cards planStatus={isPaid} createandplaycard ={[...createandplaycardsitems15]}/>
+                </div>
             </div>
         </div>
     </>

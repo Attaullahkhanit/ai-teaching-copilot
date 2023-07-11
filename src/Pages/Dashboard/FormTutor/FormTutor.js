@@ -25,6 +25,7 @@ function FormTutor() {
 
     const formtutorcarditems1 = [
         { cardicon: "bi bi-controller fs-3 text-primary",
+          tooltitle: 'Form Tutor',
           title : 'Pictionary',
           p1:" prompt: `Primary Prompt: I am a school teacher can you prepare a list of 20 words that can be used for Pictionary based on this topic [Topic]. I will identify the age which is [AGE] to ensure it is suitable for the audience.",
           p2:"Secondary Prompt: The age of the students is identified below: ",
@@ -53,6 +54,7 @@ function FormTutor() {
 
     const formtutorcarditems2 = [
         { cardicon: "bi bi-calculator fs-3 text-primary",
+          tooltitle: 'Form Tutor',
           title : 'Guessing Game',
           p1:" prompt: `Primary Prompt: I am a school teacher and for my form class I want to create a guessing game by giving 5 clues and then the answer at the bottom, consider the audiences age [AGE]: ",
           p2:"Secondary Prompt: The age of the students is identified below: ",
@@ -81,6 +83,7 @@ function FormTutor() {
 
         const formtutorcarditems3 = [
         { cardicon: "bi bi-chat-dots-fill fs-3 text-primary",
+          tooltitle: 'Form Tutor',
           title : 'Thought of the Day',
           p1:" prompt: `Primary Prompt: I am a school teacher and for my form class I want to create a thought for the day based on [Category ] and they are [Age]. ",
           p2:"Secondary Prompt: The age of the students is identified below: ",
@@ -120,6 +123,7 @@ function FormTutor() {
 
         const formtutorcarditems4 = [
         { cardicon: "bi bi-alarm fs-3 text-primary",
+          tooltitle: 'Form Tutor',
           title : 'Form Time Quiz',
           p1:" prompt: `Primary Prompt: Can you prepare a multiple choice quiz for the topic [Topic] and the age of the students is [AGE]. The quiz will include 8 multiple choice questions with 4 possible answers, the correct answer will be highlighted and explained in detail. ",
           p2:"Secondary Prompt: The age of the students is identified below: ",
@@ -149,15 +153,16 @@ function FormTutor() {
     ]
     const formtutorcarditems5 = [
         { cardicon: "bi bi-envelope-at fs-3 text-primary",
+          tooltitle: 'Form Tutor',
           title : 'Parent Emails',
           p1:" prompt: `Primary Prompt: I am a school leader can you prepare an email for: [Recipients] and can you include the following [Description]: ",
           p2:"Secondary Prompt: The email will need to include: ",
           p3:"",
-          labletopics: 'Describe content to include.',
-          inputPlaceH: 'Example: Describe want you want communicated to students, parents or staff. ',
-          agelabel: 'Audience Age',
+          labletopics: 'Who are the intended recipients ?',
+          inputPlaceH: 'Example: Students, Parents, Staff  ',
+          agelabel: 'Describe content to include.',
           inputAgePlaceH: 'Example: Year 7, Aged 12', 
-          paratext: 'What to keep parents up to date with students progress, or the weekly email.',
+          paratext: 'Example: Describe want you want communicated to students, parents or staff.',
           namebtn: 'Launch',
           Notes_content: `<div>
           <p>Automatically Generate Emails for Students, Parents, and Staff
@@ -185,6 +190,7 @@ function FormTutor() {
     ]
     const formtutorcarditems6 = [
         { cardicon: "bi bi-telephone-fill fs-3 text-primary",
+          tooltitle: 'Form Tutor',
           title : 'Phone Calls',
           p1:" prompt: `Primary Prompt: I am a school teacher and need to phone home to the parents of my tutee can you help me to structure my phone call. The current issue I have is [ Description]: ",
           p2:"Secondary Prompt: The age of the students is identified below: ",
@@ -219,8 +225,9 @@ function FormTutor() {
     ]
     const formtutorcarditems7 = [
         { cardicon: "bi bi-view-list fs-3 text-primary",
+          tooltitle: 'Form Tutor',
           title : 'Form Reports',
-          p1:" prompt: `Primary Prompt: I am school form tutor writing a written report can you include [Description ] and the pupil is [age].  The report will need to have a word count of [ word count ] .: ",
+          p1:" prompt: `Primary Prompt: I am school form tutor writing a written report can you include [Description ] and the pupil is [age].  The report will need to have a word count of [ word count ] . ",
           p2:"Secondary Prompt: The age of the students is identified below: ",
           p3:"",
           labletopics: 'Description.',
@@ -257,6 +264,7 @@ function FormTutor() {
     ]
     const formtutorcarditems8 = [
         { cardicon: "bi bi-file-play fs-3 text-primary",
+          tooltitle: 'Form Tutor',
           title : 'Free Play',
           p1:" prompt: `Primary Prompt: Can you prepare a lesson plan for the following topic: ",
           p2:"Secondary Prompt: The age of the students is identified below: ",
@@ -269,13 +277,12 @@ function FormTutor() {
           namebtn: 'Launch',
           Notes_content: `<div>
           
-          <p>Write a report for my tutee who wants help looking for work experience
-            Help me write a letter of recommendation for my tutee
-            Create a list of ideas that would engage my form group at tutor time
-            Give me 3 quote that i could use to inspire my form group
-            Share 5 tips that i can give to my tutor group to support them through their assessments
-          </p>
-
+          <p>Write a report for my tutee who wants help looking for work experience</p>
+            Help me write a letter of recommendation for my tutee.<br/>
+            Create a list of ideas that would engage my form group at tutor time.<br/>
+            Give me 3 quote that i could use to inspire my form group.<br/>
+            Share 5 tips that i can give to my tutor group to support them through their assessments.<br/>
+            
           <p>Feel free to have a play :-)</p>
         </div>`,
           isPdf:true,
@@ -292,11 +299,12 @@ function FormTutor() {
     ]
     const formtutorcarditems9 = [
         { cardicon: "bi bi-activity fs-3 text-primary",
+          tooltitle: 'Form Tutor',
           title : 'Idea Generator',
           p1:" prompt: `Primary Prompt: I am a school form tutor and I want to generate ideas for [Description]. The students are aged [age]: ",
           p2:"Secondary Prompt: The age of the students is identified below: ",
           p3:"",
-          labletopics: 'User Input #1 Description (to generate ideas for)',
+          labletopics: 'Description (to generate ideas for)',
           inputPlaceH: 'Example: talent show, art competition, show and tell.',
           agelabel: 'Pupils Age:',
           inputAgePlaceH: 'Example: Aged 11', 
@@ -325,6 +333,7 @@ function FormTutor() {
     ]
     const formtutorcarditems10 = [
         { cardicon: "bi bi-mortarboard-fill fs-3 text-primary",
+          tooltitle: 'Form Tutor',
           title : 'Student Wellbeing',
           p1:" prompt: `Primary Prompt: I am a school form tutor and I want to support with student well being with a focus on  [Description]. The students are aged [age].: ",
           p2:"Secondary Prompt: The age of the students is identified below: ",
@@ -360,15 +369,16 @@ function FormTutor() {
     ]
     const formtutorcarditems11 = [
         { cardicon: "bi bi-file-word fs-3 text-primary",
+          tooltitle: 'Form Tutor',
           title : 'Word of the Day',
-          p1:" prompt: `Primary Prompt: I am a school form tutor and I want to support pupils with literacy, can you give me a three words for the day, share their meaning and take into consider they are aged [Age].: ",
+          p1:" prompt: `Primary Prompt: I am a school form tutor and I want to support pupils with literacy, can you give me a three words for the day, share their meaning and take into consider they are aged [Age].",
           p2:"Secondary Prompt: The age of the students is identified below: ",
           p3:"",
           labletopics: 'Pupils Age:',
           inputPlaceH: 'Example: Plant Cells, Macbeth, Rounding, Romans',
-          agelabel: 'Audience Age',
+          agelabel: 'Pupils Age:',
           inputAgePlaceH: 'Example: Year 9, Aged 14', 
-          paratext: 'Engaging puzzles to challenge and develop the tutees critical thinking skills.',
+          paratext: 'Introducing new words daily expands vocabulary, broadens language skills, and enriches students word bank.',
           namebtn: 'Launch',
           Notes_content: `<div>
           <p>
@@ -389,6 +399,7 @@ function FormTutor() {
     ]
     const formtutorcarditems12 = [
         { cardicon: "bi bi-tools fs-3 text-primary",
+          tooltitle: 'Form Tutor',
           title : 'Tool Idea',
           p1:" prompt: `Primary Prompt: Can you prepare a lesson plan for the following topic: ",
           p2:"Secondary Prompt: The age of the students is identified below: ",
@@ -429,7 +440,7 @@ function FormTutor() {
         <Dashbaord>
             <div className="min-vh-100" style={{ backgroundColor: "#f0f8ff" }}>
                 <div>
-                    <h4 className=" text-white fw-bold py-2 px-3" style={{backgroundColor: '#036CFF'}}>Form Tutor</h4>
+                    <h4 className="text-white fw-bold py-2 px-3" style={{backgroundColor: '#036CFF'}}>Form Tutor Tools</h4>
                 </div> 
                 <div className='container-fluid'>
                     <div className='row my-lg-3 my-md-3'>
@@ -470,9 +481,9 @@ function FormTutor() {
                         <div className='col-lg-3 col-md-6 col-sm-6 d-flex align-items-stretch'>
                             <FTCard planStatus={isPaid} formtutorcard ={[...formtutorcarditems11]}/>
                         </div>
-                        <div className='col-lg-3 col-md-6 col-sm-6 d-flex align-items-stretch'>
+                        {/* <div className='col-lg-3 col-md-6 col-sm-6 d-flex align-items-stretch'>
                             <FTCard planStatus={isPaid} formtutorcard ={[...formtutorcarditems12]}/>
-                        </div> 
+                        </div>  */}
                     </div>
                 </div>  
             </div>

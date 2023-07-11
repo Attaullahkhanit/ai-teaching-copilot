@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom'
 
 
 function PrivacyPolicy() {
+    const options = { year: 'numeric', month: '2-digit', day: '2-digit' };
+    const todayDate = new Date().toLocaleDateString('en-US', options)
     return (
         <>
             <div className="container">
@@ -13,7 +15,7 @@ function PrivacyPolicy() {
                         <h3>TeachingCopilot.com</h3>
                         <h3>Privacy Policy</h3>
 
-                        <p>Effective Date: 6/24/2023</p>
+                        <p>Effective Date: {todayDate}</p>
 
                         <p>This Privacy Policy describes how we collect, use, and protect the personal information provided by users ("you" or "user") on [your website domain] ("the website"). We are committed to ensuring the privacy and security of your personal information. By accessing and using the website, you agree to the terms and conditions of this Privacy Policy.</p>
 

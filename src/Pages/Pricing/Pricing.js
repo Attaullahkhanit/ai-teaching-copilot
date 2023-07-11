@@ -29,7 +29,7 @@ function Pricing() {
           price: '£6.99 / £60 Annual',
           trialHints:[ 'Full Access','Email Support','Premium Tools','Access Latest Features','Pro Storage','Cancel Any Time','500 Credits'],
           btntext: 'GO PRO',
-          navigat: '/register'
+          navigat: '/CheckoutForm'
         }
       ]
     const listpricingCard3Data =

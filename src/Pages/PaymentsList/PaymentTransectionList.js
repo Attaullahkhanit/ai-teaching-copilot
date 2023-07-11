@@ -50,7 +50,9 @@ function PaymentTransectionList() {
         <>
             <Dashbaord>
         <div className="min-vh-100" style={{ backgroundColor: "#f0f8ff" }}>
-           <h1>Payments</h1>
+          <div>
+              <h4 className=" text-white fw-bold py-2 px-3" style={{backgroundColor: '#036CFF'}}>Payment Transection List</h4>
+          </div>
            <div className="container-fluid">
            <div className="row">
            <table id="dtBasicExample" className="table table-bordered table-striped table-sm" cellspacing="0" width="100%">

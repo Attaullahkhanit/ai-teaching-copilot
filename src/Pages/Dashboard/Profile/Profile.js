@@ -1,14 +1,15 @@
 import React from "react"; 
 import "./Profile.css";
- import { Link } from "react-router-dom";
+ import { Link, useNavigate } from "react-router-dom";
 import { getFileSrcFromPublicimg } from "../../../utils";
 
  import Dashbaord from "../Dashboard/Dashboard";
  import { useState } from "react";
-import { RiFacebookFill } from "react-icons/ri";
+import { FaFacebookSquare } from "react-icons/fa";
 import { AiFillYoutube } from "react-icons/ai";
 import { baseURL } from "../../../config";
 import { useEffect } from "react";
+import { BsLightningChargeFill, BsTwitter, BsYoutube } from "react-icons/bs";
 
 function Profile() {
   let loginResponse = localStorage.getItem("loginResponse");
@@ -79,14 +80,68 @@ function Profile() {
             .catch(error => console.log('error', error));
     }, [ ]);
 
+    // Social Media Card Data
+
+    const [isPaid, setPlanStatus] = useState(false);
+    useEffect(() => {
+      let loginResponse = localStorage.getItem("loginResponse");
+          loginResponse = JSON.parse(loginResponse); 
+            fetch(`https://copilot-bk-node-production.up.railway.app/track_user_free_credits/${loginResponse.userDetail._id}`, {method: 'GET',})
+            .then(response => response.json())
+            .then(FreeCreditResult =>{
+                  fetch(baseURL+"check-plan-status/"+loginResponse.userDetail._id)
+                  .then(response => response.json())
+                  .then(result => {
+                    setPlanStatus(FreeCreditResult?.trackcredits>0?true:result?.currentPlan_status?true:false)})
+                  .catch(error => console.log('error', error)); 
+              }).catch(error => console.log('error', error));
+    }, [ ]);
+
+    const navigate = useNavigate()
+    function goToLessonPlan (cardData) {
+        navigate('/lessonplan',{state:cardData} );
+    }
+
+    const socialMediaCard = [
+      {
+        icon: <BsLightningChargeFill size={23} className="text-warning"/>,
+        title: "Upgrade",
+        contentText: "Accelerate your credits! Tag 5 friends on our Facebook page and share one of our post for 5 free credits.",
+        link: "#",    
+      },
+      {
+        icon: <BsTwitter size={23} style={{color: '#00acee'}}/>,
+        title: "Twitter",
+        contentText: "Boost your credits! Follow us and share or like one of our post for 5 free credits.",
+        link: "#",    
+      },
+      {
+        icon: <BsYoutube size={23} style={{color: '#FF0000'}} />,
+        title: "Youtube",
+        contentText: "Supercharge your credits! Subscribe and like two videos on our YouTube channel for 5 free credits.",
+        link: "https://www.youtube.com/@TeachingCopilot/featured",    
+      },
+      {
+        icon: <FaFacebookSquare size={23} style={{color: '#1778f2'}} />,
+        title: "Facebook",
+        contentText: "Accelerate your credits! Tag 5 friends on our Facebook page and share one of our post for 5 free credits.",
+        link: "https://www.facebook.com/profile.php?id=100092227787152",  
+      }
+
+    ]
+
+
+
   
 console.log(gggg, 'ggg  gggg')
   return (
     <>
       <Dashbaord>
         <section className="min-vh-100" style={{ backgroundColor: "#f0f8ff" }}>
+        <div>
+            <h4 className=" text-white fw-bold py-2 px-3" style={{backgroundColor: '#036CFF'}}>My Profile</h4>
+        </div>
           <div className="container-fluid">
-            <div className="py-2"><h4 className="fw-bold">My Profile</h4></div>
             <div className="row">
               <div className="col-12">
                 <div className="card bg-white border-0 rounded w-200 my-3 p-3">
@@ -113,7 +168,7 @@ console.log(gggg, 'ggg  gggg')
                       >
                         Next Billing Date
                       </div>
-                      <h6>after each 30 days</h6>
+                      <h6>After Each 30 Days</h6>
 
                       <div
                         className="text-secondary pt-2"
@@ -214,47 +269,60 @@ console.log(gggg, 'ggg  gggg')
                       </button>
                     </div>
                   </div>
-                  <div className="d-flex">
-                      <div className="">
-                        <h2>Paid Plan</h2>
-                        <p>Upgrade now to take full advantage of the time saving tools, giving you a life beyond the classroom</p>
-                        <div className="d-flex">
-                          <div>
-                            <h2>Free Credits</h2>
-                            <p>Want to earn more credits simply help share this platform with teachers and tutors:</p>
-          
-                            <ul className="">
-                              <li>Like &amp; Subscribe to our YouTube Channel - 5 free credits</li>
-                              <li>Tag 5 friends via our Facebook Page - 5 free credits</li>
-                              <li>Share the web link through WhatsApp</li>
-                            </ul>
-                          </div>
-                          <div className="my-auto">                          
-                            <Link
-                                className="btn text-white btn-floating shadow m-1"
-                                style={{backgroundColor: '#FF0000'}}
-                                to="https://www.youtube.com/@TeachingCopilot/featured"
-                                target="_blank"
-                                role="button"
-                            ><AiFillYoutube size={25}/>
-                            </Link>
-
-                            <Link
-                                className="btn text-white btn-floating shadow m-1"
-                                style={{backgroundColor: '#1778f2'}}
-                                to="https://www.facebook.com/profile.php?id=100092227787152"
-                                target="_blank"
-                                role="button"
-                            ><RiFacebookFill size={25}/>
-                            </Link>                           
-                      </div>
-                        </div>
-                      </div>
-                      
-                      
-                  </div>
+                  
 
                 </div>
+              </div>
+              <div className="row">
+                <div className="col-12">
+                    <h2>Paid Plan</h2>
+                    <p>Upgrade now to take full advantage of the time saving tools, giving you a life beyond the classroom</p>
+                    <h2>Free Credits</h2>
+                    <p>Want to earn more credits simply help share this platform with teachers and tutors:</p>
+                </div>
+              </div>
+              <div className="container-fluid">
+              <div className="row my-lg-3 my-md-3">       
+                        {socialMediaCard.map((cardObj) => (
+                          <>
+                          <div className="col-lg-3 col-md-6 col-sm-6 d-flex align-items-stretch">
+                            <div className='card w-100 p-1 px-sm-0 my-2 text-center border-0 rounded-1 shadow-sm cardbgcss pb-2 d-flex flex-column justify-content-between'>
+                                <div>
+                                  {console.log(cardObj,socialMediaCard, 'createandplaycard')}
+                                  {cardObj?.icon}
+                                  <h5 className=''>{cardObj?.title}</h5>
+                                </div>
+                                <div>
+                                  <p className=''>{cardObj?.contentText}</p>
+                                </div>
+                                <div class="d-grid gap-3 col-11 mx-auto"> 
+                                  <Link className="btn btn-outline-warning p-1" to={cardObj?.link} target="_blank">Launch</Link>
+                                </div>
+                            </div>
+                          </div>
+                          </>
+                          ))
+                        }        
+                {/* <div className="my-auto">                          
+                  <Link
+                      className="btn text-white btn-floating shadow m-1"
+                      style={{backgroundColor: '#FF0000'}}
+                      to="https://www.youtube.com/@TeachingCopilot/featured"
+                      target="_blank"
+                      role="button"
+                  ><AiFillYoutube size={25}/>
+                  </Link>
+
+                  <Link
+                      className="btn text-white btn-floating shadow m-1"
+                      style={{backgroundColor: '#1778f2'}}
+                      to="https://www.facebook.com/profile.php?id=100092227787152"
+                      target="_blank"
+                      role="button"
+                  ><RiFacebookFill size={25}/>
+                  </Link>                           
+                </div> */}        
+              </div>
               </div>
             </div>
           </div>

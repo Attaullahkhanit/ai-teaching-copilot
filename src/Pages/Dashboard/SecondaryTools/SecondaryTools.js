@@ -33,6 +33,7 @@ function SecondaryTools() {
         const formSecondcreativecarditems1 = [
           { 
             cardicon: "bi bi-layout-text-sidebar fs-3 text-primary",
+            tooltitle: 'Secondary',
             title : 'Summarise Text',
             p1:" prompt: `Primary Prompt: Can you summarise the below text by extracting the main ideas and key points. You will need to consider the audience age which is [age ] and then summarise the text into [WORDS} ]words.",
             p2:"Secondary Prompt: The age of the students is identified below: ",
@@ -68,6 +69,7 @@ function SecondaryTools() {
 
         const formSecondcreativecarditems2 = [
             { cardicon: "bi bi-file-text fs-3 text-primary",
+            tooltitle: 'Secondary',
               title : 'Poem Generator', 
               p1:" prompt: `Primary Prompt: I am a school teacher can you create a poem for the topic [LESSON], try to include the following words [ WORDS] it must be suitable for pupils [AGE].",
               p2:"Secondary Prompt: The age of the students is identified below: ",
@@ -101,6 +103,7 @@ function SecondaryTools() {
 
             const formSecondcreativecarditems3 = [
             { cardicon: "bi bi-puzzle fs-3 text-primary",
+            tooltitle: 'Secondary',
               title : 'Cryptic Puzzle',
               p1:" prompt: `Primary Prompt: I am a school teacher can you create a cryptic puzzle for [TOPIC] it must be suitable for pupils age [AGE]. Then reveal the answers at the bottom..",
               p2:"Secondary Prompt: The age of the students is identified below: ",
@@ -131,6 +134,7 @@ function SecondaryTools() {
 
             const formSecondcreativecarditems4 = [
             { cardicon: "bi bi-file-spreadsheet-fill fs-3 text-primary",
+            tooltitle: 'Secondary',
               title : 'Worksheet Generator',
               p1:" prompt: `Primary Prompt: I am a school teacher can you create a worksheet and include various task and activity based on the topic [TOPICt].  it must be suitable for pupils aged [AGE]. Then reveal the answers at the bottom ",
               p2:"Secondary Prompt: The age of the students is identified below: ",
@@ -161,6 +165,7 @@ function SecondaryTools() {
 
         const formSecondcreativecarditems5 = [
           { cardicon: "bi bi-body-text fs-3 text-primary",
+          tooltitle: 'Secondary',
             title : 'Model Essay',
             p1:" prompt: `Primary Prompt: I am a school teacher can you create a model essay let me describe it, [description]. The essay must be suitable for pupils aged [age]. ",
             p2:"Secondary Prompt: The age of the students is identified below: ",
@@ -196,6 +201,7 @@ function SecondaryTools() {
 
         const formSecondcreativecarditems6 = [
             { cardicon: "bi bi-file-break fs-3 text-primary",
+            tooltitle: 'Secondary',
               title : 'Icebreaker Generator',
               p1:" prompt: `Primary Prompt: Can you create a list of icebreakers that are suitable for the subject [SUBJECT] and the for the age range [AGE]. ",
               p2:"Secondary Prompt: The age of the students is identified below: ",
@@ -224,6 +230,7 @@ function SecondaryTools() {
 
             const formSecondcreativecarditems7 = [
             { cardicon: "bi bi-chat-text-fill fs-3 text-primary",
+            tooltitle: 'Secondary',
               title : 'Brain Break Ideas',
               p1:" prompt: `Primary Prompt: I am a school teacher can you create a list of brain break ideas that are suitable for the age range [Age]. ",
               p2:"Secondary Prompt: The age of the students is identified below: ",
@@ -254,6 +261,7 @@ function SecondaryTools() {
 
             const formSecondcreativecarditems8 = [
             { cardicon: "bi bi-emoji-laughing fs-3 text-primary",
+            tooltitle: 'Secondary',
               title : 'Joke Generator',
               p1:" prompt: `Primary Prompt: Write some child friendly jokes based on the following topic [TOPIC] and consider their age:[AGE]. ",
               p2:"Secondary Prompt: The age of the students is identified below: ",
@@ -286,6 +294,7 @@ function SecondaryTools() {
 
         const formASPcarditems1 = [
           { cardicon: "bi bi-text-paragraph fs-3 text-primary",
+          tooltitle: 'Secondary',
             title : 'Sentence Starter',
             p1:" prompt: `Primary Prompt: I am a school teacher can you create sentence starters for the this topic or learning objective here: [Topic]. It must be suitable for pupils aged [AGE]. ",
             p2:"Secondary Prompt: The age of the students is identified below: ",
@@ -317,6 +326,7 @@ function SecondaryTools() {
 
         const formASPcarditems2 = [
             { cardicon: "bi bi-text-indent-left fs-3 text-primary",
+            tooltitle: 'Secondary',
               title : 'Fill the Blank',
               p1:" prompt: `Primary Prompt: I’am a school teacher and will identify the topic or concept that I would like you to create a fill the blank worksheet with 8 answers. It will use a paragraph structure with underscores for the missing answer and the answers and answer key will be placed at the bottom. The title of the worksheet should be placed at the top in bold. So the topic is [Topic], it must be suitable for pupils age [AGE].",
               p2:"Secondary Prompt: The age of the students is identified below: ",
@@ -350,6 +360,7 @@ function SecondaryTools() {
 
             const formASPcarditems3 = [
             { cardicon: "bi bi-ui-checks-grid fs-3 text-primary",
+            tooltitle: 'Secondary',
               title : 'True or False',
               p1:" prompt: `Primary Prompt: I am a school teacher can you create a true or false activity for the topic let me describe it,  [Lesson]. The activity must be suitable for pupils aged [Age] and should share the answers at the bottom of the sheet. ",
               p2:"Secondary Prompt: The age of the students is identified below: ",
@@ -382,6 +393,7 @@ function SecondaryTools() {
 
             const formASPcarditems4 = [
             { cardicon: "bi bi-slash-circle-fill fs-3 text-primary",
+            tooltitle: 'Secondary',
               title : 'Mr Wrong',
               p1:" prompt: `Primary Prompt: I want pupils to think about questions that are wrong and then come up with the right answer through discussion. Can you prepare a list of answer that are wrong based on this topic or learning objective: [Topic]. The activity must be suitable for pupils aged [AGE].Display the correct answers at the bottom of the worksheet. ",
               p2:"Secondary Prompt: The age of the students is identified below: ",
@@ -415,6 +427,7 @@ function SecondaryTools() {
 
         const formASPcarditems5 = [
           { cardicon: "bi bi-controller fs-3 text-primary",
+          tooltitle: 'Secondary',
             title : 'Pictionary Ideas',
             p1:" prompt: `Primary Prompt: can you prepare a list of 20 words that can be used for Pictionary based on this topic or learning objective: [Topic]. The activity must be suitable for pupils aged [AGE]..",
             p2:"Secondary Prompt: The age of the students is identified below: ",
@@ -447,6 +460,7 @@ function SecondaryTools() {
 
         const formASPcarditems6 = [
             { cardicon: "bi bi-activity fs-3 text-primary",
+            tooltitle: 'Secondary',
               title : 'Assessment Ideas',
               p1:" prompt: `Primary Prompt: I am a school teacher can you generate a list of assessment ideas that will help to measure pupils progress. The ideas will focus on this topic or learning objective: [Topic]. The activity must be suitable for pupils aged [AGE].",
               p2:"Secondary Prompt: The age of the students is identified below: ",
@@ -483,6 +497,7 @@ function SecondaryTools() {
 
             const formASPcarditems7 = [
             { cardicon: "bi bi-alarm fs-3 text-primary",
+            tooltitle: 'Secondary',
               title : 'Retrieval Quiz',
               p1:" prompt: `Primary Prompt: I want to create a retrieval quiz  to allow students to demonstrate knowledge recall. Can you prepare a list of 6 retrieval questions with multiple answers based on this topic or learning objective: [TOPIC]. The activity must be suitable for pupils aged [AGE]. Display the correct answer directly after the question ",
               p2:"Secondary Prompt: The age of the students is identified below: ",
@@ -520,6 +535,7 @@ function SecondaryTools() {
 
             const formASPcarditems8 = [
             { cardicon: "bi bi-radioactive fs-3 text-primary",
+            tooltitle: 'Secondary',
               title : 'Got an Idea',
               p1:" prompt: `Primary Prompt: create 15 Pictionary words that students can be asked to illustrate key ideas or processes through drawings. This activity allows educators to gauge how well students remember and can visually represent important information. The topic is:[Topic] .The activity must be suitable for pupils aged [AGE]. ",
               p2:"Secondary Prompt: The age of the students is identified below: ",
@@ -553,6 +569,7 @@ function SecondaryTools() {
 
         const formLessonPcarditems1 = [
           { cardicon: "bi bi-calendar2-check fs-3 text-primary",
+          tooltitle: 'Secondary',
             title : 'Lesson Planning',
             p1:" prompt: `Primary Prompt: I am a master teacher and want help to create a lesson plan. The subject or topic I would like to plan is, [Topic]. Try to include the following objectives or curriculum standards, [objectives]. The age group of the pupils are [Age]. The topics will need to be structured by [Structure]. The time available for each topic or lesson is [Time]. ",
             p2:"Secondary Prompt: The age of the students is identified below: ",
@@ -627,6 +644,7 @@ function SecondaryTools() {
       ]
         const formLessonPcarditems2 = [
             { cardicon: "bi bi-textarea fs-3 text-primary",
+            tooltitle: 'Secondary',
               title : 'Topic Planner',
               p1:" prompt: `Primary Prompt: I am a master teacher and want help to create a plan of topics. The subject or topic I would like to plan is, [Topic]. Try to include the following objectives or curriculum standards, [objectives]. The age group of the pupils are [Age]. The topics will need to be structured by [Structure]. The time available for each topic or lesson is [Time] ",
               p2:"Secondary Prompt: The age of the students is identified below: ",
@@ -664,6 +682,7 @@ function SecondaryTools() {
 
             const formLessonPcarditems3 = [
             { cardicon: "bi bi-activity fs-3 text-primary",
+            tooltitle: 'Secondary',
               title : 'Lesson Ideas',
               p1:" prompt: `Primary Prompt: I am a school teacher can you share with me a list of ways in which I can make the following lesson more engaging, [Lesson] to engage students.. The activity must be suitable for pupils aged [AGE]. ",
               p2:"Secondary Prompt: The age of the students is identified below: ",
@@ -700,6 +719,7 @@ function SecondaryTools() {
 
             const formLessonPcarditems4 = [
             { cardicon: "bi bi-file-earmark-easel fs-3 text-primary",
+            tooltitle: 'Secondary',
               title : 'Slide Generator',
               p1:" prompt: `Primary Prompt:  ",
               p2:"Secondary Prompt: The age of the students is identified below: ",
@@ -727,6 +747,7 @@ function SecondaryTools() {
         const formLessonPcarditems5 = [
             {
             cardicon: "bi bi-file-diff fs-3 text-primary",
+            tooltitle: 'Secondary',
             title : 'Differentiation',
             p1:" prompt: `Primary Prompt: Differentiating a learning resource. You are an expert on differentiating resources for students of different needs. Read the following text, [User Upload]. You are going to create three versions of this. In the first version of text can you include [Version 1]. In the second version of text can you include [Version 2]. In the third version of text can you include [Version 3]. The activity must be suitable for pupils aged [AGE]. ",
             p2:"Secondary Prompt: The age of the students is identified below: ",
@@ -772,6 +793,7 @@ function SecondaryTools() {
 
           const formCAcarditems1 = [
             { cardicon: "bi bi-map fs-3 text-primary",
+            tooltitle: 'Secondary',
               title : 'Curriculum Mapping',
               p1:" prompt: `Primary Prompt: I am a school leader can you help to create a curriculum map. The subject it is being develop for is [Topic] . It will need to align learning objectives, activities and assessment across the curriculum. The age group that it will be targeted at is [Age]. ",
               p2:"Secondary Prompt: The age of the students is identified below: ",
@@ -804,6 +826,7 @@ function SecondaryTools() {
   
           const formCAcarditems2 = [
               { cardicon: "bi bi-book-half fs-3 text-primary",
+              tooltitle: 'Secondary',
                 title : 'Glossary Generator',
                 p1:" prompt: `Primary Prompt: I am a school teacher and want you to create a glossary for the following topic [Topic] . It should be suitable for pupils age [Age] . The output will need to be in a table form with the keyword and description separated. It should also be placed in alphabetical order.",
                 p2:"Secondary Prompt: The age of the students is identified below: ",
@@ -836,6 +859,7 @@ function SecondaryTools() {
   
               const formCAcarditems3 = [
               { cardicon: "bi bi-speaker fs-3 text-primary",
+              tooltitle: 'Secondary',
                 title : 'Student Voice',
                 p1:" prompt: `Primary Prompt: I am a school leader and want to create a student voice questionnaire for the following topic [Topic]. It should be suitable for pupils age [Age]. ",
                 p2:"Secondary Prompt: The age of the students is identified below: ",
@@ -875,6 +899,7 @@ function SecondaryTools() {
   
               const formCAcarditems4 = [
               { cardicon: "bi bi-award fs-3 text-primary",
+              tooltitle: 'Secondary',
                 title : 'Skills Audit',
                 p1:" prompt: `Primary Prompt: I am a school leader can you help to create a skills audit for a school teacher. The focus area will be [Key Competencies], For each of the criteria the user will need to highlight there skill level as either  Novice, Intermediate, Proficient, and Expert. Can you then create a matrix that list the key competencies of [Key Competencies], in a table. ",
                 p2:"Secondary Prompt: The age of the students is identified below: ",
@@ -910,6 +935,7 @@ function SecondaryTools() {
           const formCAcarditems5 = [
               {
               cardicon: "bi bi-graph-down-arrow fs-3 text-primary",
+              tooltitle: 'Secondary',
               title : 'Deep Dives',
               p1:" prompt: `Primary Prompt: I am a subject specialist at a school and want to do a deep dive of the following subject [Subject]. Can you prepare a list of questions that would help me to identify the strengths and weakness of my curriculum. For the questions posed give [Solutions]answers. ",
               p2:"Secondary Prompt: The age of the students is identified below: ",
@@ -941,6 +967,7 @@ function SecondaryTools() {
 
         const formCAcarditems6 = [
           { cardicon: "bi bi-person-lines-fill fs-3 text-primary",
+          tooltitle: 'Secondary',
             title : 'Learning Walks',
             p1:" prompt: `Primary Prompt: I am a subject specialist at a school and want to undertake a learning walk. The purpose of the learning walk is [Purpose]. The goals of the learning walk is to contribute to our professional development. Create a checklist that outlines key areas of focus during the learning walk ",
             p2:"Secondary Prompt: The age of the students is identified below: ",
@@ -973,6 +1000,7 @@ function SecondaryTools() {
 
         const formCAcarditems7 = [
             { cardicon: "bi bi-book fs-3 text-primary",
+            tooltitle: 'Secondary',
               title : 'Subject Reading',
               p1:" prompt: `Primary Prompt: I am a school teacher can you generate a list of reading material to further support, stretch and engage pupils within the following subject [subject]. It must be suitable for the students age they are [Age]. Output the results in a table with the author, book title and why they should read it. ",
               p2:"Secondary Prompt: The age of the students is identified below: ",
@@ -1007,6 +1035,7 @@ function SecondaryTools() {
 
             const formCAcarditems8 = [
             { cardicon: "bi bi-smartwatch fs-3 text-primary",
+            tooltitle: 'Secondary',
               title : 'Subject Watch',
               p1:" prompt: `Primary Prompt: I am a school teacher can you generate a list of video material to further support, stretch and engage pupils within the following subject [Subject]. It must be suitable for the students age they are [Age]. Output the results in a table with the director, media title and why they should watch it. ",
               p2:"Secondary Prompt: The age of the students is identified below: ",
@@ -1043,6 +1072,7 @@ function SecondaryTools() {
 
             const formCAcarditems9 = [
             { cardicon: "bi bi-person-video3 fs-3 text-primary",
+            tooltitle: 'Secondary',
               title : 'IEP',
               p1:" prompt: `Primary Prompt: I am a Special educational needs coordinator and a school teacher, can you help me to develop a individual education plan. The pupils learner need is [Learner Need]. Their strengths are as follows [Strengths].The areas for improvement are [Improvement]. The current hobbies and interests include [Hobbies]. The output of the IEP will outline the measurable goals and objectives that are set for the student to achieve within a specified timeframe [TimeFrame]. These goals should be specific, measurable, attainable, relevant, and time-bound (SMART). They are designed to address the student's areas of need and guide the instructional planning and intervention strategies.You will also need to consider their age, they are [Age]. ",
               p2:"Secondary Prompt: The age of the students is identified below: ",
@@ -1084,6 +1114,7 @@ function SecondaryTools() {
         const formCAcarditems10 = [
             {
             cardicon: "bi bi-person-workspace fs-3 text-primary",
+            tooltitle: 'Secondary',
             title : 'Classroom Support',
             p1:" prompt: `Primary Prompt: I am a school teacher can you give me examples of Behavior & Engagement Prompts: Tools to foster positive behavior and self-regulation in students. You will also need to consider their age, they are [Age] ",
             p2:"Secondary Prompt: The age of the students is identified below: ",
@@ -1115,24 +1146,22 @@ function SecondaryTools() {
       ]
 
       const formCAcarditems11 = [
-        { cardicon: "bi bi-activity fs-3 text-primary",
-          title : 'Curriculum Ideas',
-          p1:" prompt: `Primary Prompt: I am a subject specialist at a school and want to further embed cultural capital into the [Subject] curriculum. Can you prepare a list of ideas to support and give examples where suitable.  ",
+        { cardicon: "bi bi-c-circle fs-3 text-primary",
+        tooltitle: 'Secondary',
+          title : 'Cultural Capital',
+          p1:" prompt: `Primary Prompt: I am a subject specialist at a school and want to further embed cultural capital into the [Subject] curriculum. Can you prepare a list of ideas to support and give examples where suitable. ",
           p2:"Secondary Prompt: The age of the students is identified below: ",
           p3:"",
-          labletopics: 'Subject or Topic:',
-          inputPlaceH: 'Example:Art, Business Studies,Social Studies, Science',
-          agelabel: 'Age:',
-          inputAgePlaceH: 'Example: Aged 11, Aged 14', 
-          paratext: 'Generate idea to help support the development of your curriculum.',
+          agelabel: 'Subject',
+          inputAgePlaceH: 'Example: Art, Science, History, Geography, English, Maths', 
+          paratext: 'Embedding cultural capital into the curriculum promoting social mobility and equipping students for success',
           namebtn: 'Launch',
           Notes_content: `<div>
           
-          <p>The ‘Curriculum Ideas’ section will lead to the development of a dynamic, effective, and student-centered curriculum.
+          <p>Why should we embrace cultural capital?
           </p>
-          <p>Remember to regularly review and evaluate the curriculum to ensure it remains relevant, engaging, and aligned with educational goals and student needs. Seek feedback from students, parents, and teachers to make necessary adjustments and improvements.
+          <p>Embracing students' cultural capital fosters inclusive classrooms, engages learners, promotes relevance, and supports their social-emotional well-being. It celebrates diversity, empowers students, and enhances the overall educational experience
           </p>
-          <p>Review the draft in the text editor on the right and make any necessary adjustments to ensure it reflects your intended message and tone.</p>
         </div>`,
           isPdf:true,
           oneInput: true,
@@ -1146,9 +1175,43 @@ function SecondaryTools() {
           }
         }
     ]
+        const formCAcarditems12 = [
+          { cardicon: "bi bi-activity fs-3 text-primary",
+          tooltitle: 'Secondary',
+            title : 'Curriculum Ideas',
+            p1:" prompt: `Primary Prompt: I am a subject specialist at a school and want to further embed cultural capital into the [Subject] curriculum. Can you prepare a list of ideas to support and give examples where suitable.  ",
+            p2:"Secondary Prompt: The age of the students is identified below: ",
+            p3:"",
+            labletopics: 'Subject or Topic:',
+            inputPlaceH: 'Example:Art, Business Studies,Social Studies, Science',
+            agelabel: 'Age:',
+            inputAgePlaceH: 'Example: Aged 11, Aged 14', 
+            paratext: 'Generate idea to help support the development of your curriculum.',
+            namebtn: 'Launch',
+            Notes_content: `<div>
+            
+            <p>The ‘Curriculum Ideas’ section will lead to the development of a dynamic, effective, and student-centered curriculum.
+            </p>
+            <p>Remember to regularly review and evaluate the curriculum to ensure it remains relevant, engaging, and aligned with educational goals and student needs. Seek feedback from students, parents, and teachers to make necessary adjustments and improvements.
+            </p>
+            <p>Review the draft in the text editor on the right and make any necessary adjustments to ensure it reflects your intended message and tone.</p>
+          </div>`,
+            isPdf:true,
+            oneInput: true,
+            chatGPTOption:{
+            model: "gpt-3.5-turbo",
+            temperature: 0,
+            max_tokens: 1000,
+            top_p: 1,
+            frequency_penalty: 0.0,
+            presence_penalty: 0.0,  
+            }
+          }
+      ]
 
-      const formCAcarditems12 = [
+      const formCAcarditems13 = [
           { cardicon: "bi bi-send-fill fs-3 text-primary",
+          tooltitle: 'Secondary',
             title : 'SEND Support',
             p1:" prompt: `Primary Prompt: I am a Special educational needs coordinator and a school teacher, can you help give me some strategies to support a learner who has [Learner Need]. The topic we are working on is [Topic],. You will also need to consider their age, they are [Age].",
             p2:"Secondary Prompt: The age of the students is identified below: ",
@@ -1183,14 +1246,14 @@ function SecondaryTools() {
     return (
     <>
         <Dashbaord>
-            <div className='d-flex flex-column min-vh-100' style={{ backgroundColor: "#f0f8ff" }}>
+            <div className="min-vh-100" style={{ backgroundColor: "#f0f8ff" }}>
                 <div>
                     <h4 className=" text-white fw-bold py-2 px-3" style={{backgroundColor: '#036CFF'}}>Secondary Tools</h4>
                 </div>
                 {/* Section_Math */}
                   <div className="container-fluid">
                     <div className='row my-lg-3 my-md-3'>
-                        <h5 className='fw-bold px-3 py-3' style={{color: '#036CFF'}}>Creative</h5>
+                        <h4 className='fw-bold px-3 py-3' style={{color: '#036CFF'}}>Creative</h4>
                         <div className='col-lg-3 col-md-6 col-sm-6 d-flex align-items-stretch'>
                             <CCard planStatus={isPaid} formsecondcreatercard ={[...formSecondcreativecarditems1]}/>
                         </div>
@@ -1223,7 +1286,7 @@ function SecondaryTools() {
                     {/* Section Assessment/Starters/Plenaries */}
 
                     <div className='row my-lg-3 my-md-3'>
-                        <h5 className='fw-bold px-3 py-3' style={{color: '#036CFF', wordWrap: 'break-word'}}>Assessment|Starters|Plenaries</h5>
+                        <h4 className='fw-bold px-3 py-3' style={{color: '#036CFF', wordWrap: 'break-word'}}>Assessment|Starters|Plenaries</h4>
                         <div className='col-lg-3 col-md-6 col-sm-6 d-flex align-items-stretch'>
                             <ASPCard planStatus={isPaid} formASPcard ={[...formASPcarditems1]}/>
                         </div>
@@ -1253,11 +1316,12 @@ function SecondaryTools() {
                         </div>
                     </div>
                   
+                
 
                 {/* Section Lesson Planning */}
 
-                    <div className='row my-lg-3 my-md-3'>
-                      <h5 className='fw-bold px-3 py-3' style={{color: '#036CFF', wordWrap: 'break-word'}}>Assessment</h5>
+                <div className='row my-lg-3 my-md-3'>
+                <h4 className='fw-bold px-3 py-3' style={{color: '#036CFF', wordWrap: 'break-word'}}>Assessment</h4>
                         <div className='col-lg-3 col-md-6 col-sm-6 d-flex align-items-stretch'>
                             <LPCard planStatus={isPaid} formLPcard ={[...formLessonPcarditems1]}/>
                         </div>
@@ -1281,7 +1345,7 @@ function SecondaryTools() {
                   {/* Curriculam Assessment Cards */}
 
                   <div className='row my-lg-3 my-md-3'>
-                    <h5 className='fw-bold px-3 py-3' style={{color: '#036CFF'}}>Curriculam Assessment</h5>
+                    <h4 className='fw-bold px-3 py-3' style={{color: '#036CFF'}}>Curriculam Assistance</h4>
                     <div className='col-lg-3 col-md-6 col-sm-6 d-flex align-items-stretch'>
                         <CACard planStatus={isPaid} formCAcard ={[...formCAcarditems1]}/>
                     </div>
@@ -1323,6 +1387,12 @@ function SecondaryTools() {
                     </div>
                     <div className='col-lg-3 col-md-6 col-sm-6 d-flex align-items-stretch'>
                         <CACard planStatus={isPaid} formCAcard ={[...formCAcarditems12]}/>
+                    </div>
+                  </div>
+
+                  <div className='row my-lg-3 my-md-3'>
+                  <div className='col-lg-3 col-md-6 col-sm-6 d-flex align-items-stretch'>
+                        <CACard planStatus={isPaid} formCAcard ={[...formCAcarditems13]}/>
                     </div>
                   </div>
                 </div>

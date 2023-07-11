@@ -1,14 +1,12 @@
 import React from 'react'
 import './Dashboard.css';
 import { Link, useNavigate } from 'react-router-dom';
-import { GiBackup, GiTeacher } from 'react-icons/gi';
+import { GiPublicSpeaker, GiTeacher } from 'react-icons/gi';
 import { getFileSrcFromPublicimg } from '../../../utils';
-import { GiArmorUpgrade } from 'react-icons/gi';
-import { FcIdea } from 'react-icons/fc';
-import { MdPlayLesson } from 'react-icons/md'
-import { FaChalkboardTeacher } from 'react-icons/fa';
+import { CgProfile } from 'react-icons/cg';
+import { FaChalkboardTeacher, FaCloudDownloadAlt, FaPeopleGroup } from 'react-icons/fa';
 import { SiGoogleclassroom } from 'react-icons/si';
-import { BsAlignStart, BsCreditCard2Front } from 'react-icons/bs';
+import { BsAlignStart, BsCreditCard2Front, BsPeopleFill } from 'react-icons/bs';
 import { MdPayment } from 'react-icons/md'
 import { GoCloudDownload } from 'react-icons/go';
 import { baseURL } from '../../../config';
@@ -53,43 +51,43 @@ function SideBar() {
         
     const tabButtonDta = [
         {
-            icon : "bi bi-file-earmark-play-fill text-white",
+            icon : <SiGoogleclassroom size={22} className='text-white rotate-icon'/>,
             btnname: 'Form Tutor',
             navgateTo: '/formtutor',
-            title: 'Form Tutor',
+            title: 'Form Tutor Tools',
         },
         {
-            icon : "bi bi-person-video3 text-white",
-            btnname: 'Classroom Tools',
+            icon : <GiTeacher size={22} className='text-white'/>,
+            btnname: 'Classroom',
             navgateTo: '/createplay',
             title: 'Classroom Tools',
         },
         {
-            icon : "bi bi-chat-left-text text-white",
-            btnname: 'Communication Tools',
+            icon : <GiPublicSpeaker size={22} className='text-white'/>,
+            btnname: 'Communication',
             navgateTo: '/communicationtools',
             title: 'Communication Tools',
         },
         {
-            icon : "bi bi-align-start text-white",
-            btnname: 'Primary Tools',
+            icon : <BsAlignStart size={22} className='text-white'/>,
+            btnname: 'Primary',
             navgateTo: '/primarytools',
             title: 'Primary Tools',
         },
         {
-            icon : "bi bi-people-fill text-white",
-            btnname: 'Secondary Tools',
+            icon : <BsPeopleFill size={22} className='text-white'/>,
+            btnname: 'Secondary',
             navgateTo: '/secondarytools',
             title: 'Secondary Tools',
         },
         {
-            icon : "bi bi-cloud-arrow-down-fill text-white",
+            icon : <FaCloudDownloadAlt size={22} className='text-white'/> ,
             btnname: 'Downloads',
             navgateTo: '/downloads',
             title: 'Downloads',
         },
         {
-            icon : "bi bi-person-circle text-white",
+            icon : <CgProfile size={22} className='text-white'/>,
             btnname: 'Profile',
             navgateTo: '/profile',
             title: 'Profile',
@@ -126,8 +124,8 @@ function SideBar() {
                     <ul className='nav nav-pills flex-column'>
                         {tabButtonDta.map((item) => (
                             <li className='nav-item text-white'>
-                                <Link to={item?.navgateTo} className='nav-link text-white dashboardmenulink py-0 px-1' aria-current="page">
-                                    <i className={item?.icon} title={item?.title}/>
+                                <Link to={item?.navgateTo} className='nav-link text-white dashboardmenulink py-0 px-1' aria-current="page" title={item?.title}>
+                                    {item?.icon}
                                     <span className='ms-2 text-white d-none d-sm-inline sm-text-center  menuitemfont'>{item?.btnname}</span>
                                 </Link>
                             </li>
@@ -140,36 +138,36 @@ function SideBar() {
                 <hr className='text-white'/>
                     <ul className='nav nav-pills flex-column'>
                         <li className='nav-item text-white '>
-                            <Link to="" className='nav-link text-whiten dashboardmenulink py-0 px-1' aria-current="page">
-                            <BsCreditCard2Front className='text-white' title='Credits'/>
+                            <Link to="" className='nav-link text-whiten dashboardmenulink py-0 px-1' aria-current="page" title={`${freeCredits>0?freeCredits:0} of 10 Credits`}>
+                            <BsCreditCard2Front className='text-white' />
                             <span className='ms-2 text-white d-none d-sm-inline menuitemfont'>{freeCredits>0?freeCredits:0} of 10 Credits</span>
                             </Link>
                         </li>
                         {userDetail == "6481f7beb18138ad06dee0ca" &&
                             <li className='nav-item text-white '>
-                            <Link to="/paymenttransectionlist" className='nav-link text-whiten dashboardmenulink py-0 px-1' aria-current="page">
-                            <MdPayment className='text-white' title='Payment Transection'/>
+                            <Link to="/paymenttransectionlist" title='Payment Transection' className='nav-link text-whiten dashboardmenulink py-0 px-1' aria-current="page">
+                            <MdPayment className='text-white' />
                             <span className='ms-2 text-white d-none d-sm-inline menuitemfont'>Payment Transection</span>
                             </Link>
                         </li>
                         }
                         <li className='nav-item text-white '>
-                            <Link to="/upgrade" className='nav-link text-whiten dashboardmenulink py-0 px-1' aria-current="page">
-                            <i className='bi bi-lightning-charge-fill text-warning' title='Pro Upgrade'/>
+                            <Link to="/upgrade" title='Pro Upgrade' className='nav-link text-whiten dashboardmenulink py-0 px-1' aria-current="page">
+                            <i className='bi bi-lightning-charge-fill text-warning' />
                             <span className='ms-2 text-white d-none d-sm-inline menuitemfont'>Pro Upgrade</span>
                             </Link>
                         </li>
                     
                         <li className='nav-item text-white '>
-                            <button onClick = {goToContactUs} className='nav-link text-start text-white dashboardmenulink py-0 px-2 w-100' aria-current="page" >
-                            <i className='bi bi-tools text-white' title='Tool Idea'/>
+                            <button onClick = {goToContactUs} title='Tool Idea' className='nav-link text-start text-white dashboardmenulink py-0 px-2 w-100' aria-current="page" >
+                            <i className='bi bi-tools text-white' />
                             <span className='ms-2 text-white d-none d-sm-inline menuitemfont'>Tool Idea</span>
                             </button>
                         </li>
 
                         <li className='nav-item text-white'>
-                            <button onClick={goToSignin} className='nav-link text-start text-white dashboardmenulink py-0 px-2 w-100' aria-current="page">
-                            <i className='bi bi-box-arrow-left text-white' title='Logout'></i>
+                            <button onClick={goToSignin} title='Logout' className='nav-link text-start text-white dashboardmenulink py-0 px-2 w-100' aria-current="page">
+                            <i className='bi bi-box-arrow-left text-white' ></i>
                             <span className='ms-2 text-white d-none d-sm-inline menuitemfont'>Logout</span>
                             </button>
                         </li>
